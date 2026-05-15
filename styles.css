@@ -45,7 +45,8 @@ input, select, textarea {
 /* ========================================
    UTILITIES
    ======================================== */
-.text-orange { color: #f97316; }
+.text-orange-500 { color: #f97316; }
+.text-orange-400 { color: #fb923c; }
 .text-blue-400 { color: #60a5fa; }
 
 /* ========================================
@@ -170,7 +171,7 @@ input, select, textarea {
 
 .btn-quote:hover {
   background: #ea580c;
-  box-shadow: 0 10px 15px -3px rgba(249,115,22,0.2), 0 4px 6px -4px rgba(249,115,22,0.2);
+  box-shadow: 0 10px 15px -3px rgba(254,215,170,0.5), 0 4px 6px -4px rgba(254,215,170,0.3);
 }
 
 /* Mobile menu toggle */
@@ -455,10 +456,6 @@ input, select, textarea {
   margin-bottom: 16px;
 }
 
-@media (min-width: 768px) {
-  .section-title { font-size: 40px; }
-}
-
 .section-divider {
   width: 96px;
   height: 4px;
@@ -493,7 +490,7 @@ input, select, textarea {
 .service-card.card-blue { border-bottom-color: #2563eb; }
 
 .service-card:hover {
-  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1), 0 10px 15px -3px rgba(0,0,0,0.1);
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
 }
 
 .service-img-wrap {
@@ -520,7 +517,7 @@ input, select, textarea {
   background: #fff;
   padding: 12px;
   border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -559,7 +556,7 @@ input, select, textarea {
    ======================================== */
 .features {
   padding: 96px 0;
-  background: #172554;
+  background: #1e3a8a;
   color: #fff;
   overflow: hidden;
   position: relative;
@@ -593,10 +590,6 @@ input, select, textarea {
   font-size: 36px;
   font-weight: 900;
   margin-bottom: 24px;
-}
-
-@media (min-width: 768px) {
-  .features-title { font-size: 40px; }
 }
 
 .features-desc {
