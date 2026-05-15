@@ -58,13 +58,9 @@ input, select, textarea {
   left: 0;
   width: 100%;
   z-index: 50;
-  transition: all 0.3s ease;
-  padding: 16px 0;
-}
-
-.nav.scrolled {
   background: #fff;
   box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
   padding: 8px 0;
 }
 
@@ -110,13 +106,10 @@ input, select, textarea {
 .nav-link {
   font-weight: 500;
   transition: color 0.2s;
-  color: #fff;
+  color: #475569;
 }
 
 .nav-link:hover { color: #f97316; }
-
-.nav.scrolled .nav-link { color: #475569; }
-.nav.scrolled .nav-link:hover { color: #f97316; }
 
 .btn-quote {
   background: #f97316;
@@ -143,8 +136,7 @@ input, select, textarea {
   .menu-toggle { display: none; }
 }
 
-#menu-icon { color: #fff; }
-.nav.scrolled #menu-icon { color: #1e3a8a; }
+#menu-icon { color: #1e3a8a; }
 #close-icon { color: #1e3a8a; }
 
 /* ========================================
