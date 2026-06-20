@@ -192,11 +192,19 @@ input, select, textarea {
    ======================================== */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 300px;
+  max-height: 55vw;
   display: flex;
   align-items: center;
-  padding-top: 80px;
+  padding: 80px 0 40px;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    min-height: 400px;
+    max-height: 50vw;
+  }
 }
 
 .hero-bg {
@@ -265,44 +273,37 @@ input, select, textarea {
 }
 
 .hero-title {
-  font-size: 48px;
+  font-size: 32px;
   font-weight: 800;
   color: #fff;
   line-height: 1.2;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   font-family: 'Playfair Display', serif;
 }
 
+@media (min-width: 640px) {
+  .hero-title { font-size: 42px; }
+}
+
 @media (min-width: 768px) {
-  .hero-title { font-size: 72px; }
+  .hero-title { font-size: 56px; }
 }
 
 .hero-desc {
-  font-size: 20px;
+  font-size: 16px;
   color: #cbd5e1;
-  margin-bottom: 40px;
-  line-height: 1.625;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .hero-desc { font-size: 18px; margin-bottom: 32px; }
 }
 
 .hero-buttons {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-@media (min-width: 640px) {
-  .hero-buttons { flex-direction: row; }
-}
-
-.hero-buttons-row-2 {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 16px;
-}
-
-@media (min-width: 640px) {
-  .hero-buttons-row-2 { flex-direction: row; }
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .btn-pair-row {
@@ -317,15 +318,20 @@ input, select, textarea {
   background: rgba(255,255,255,0.15);
   color: #fff;
   backdrop-filter: blur(8px);
-  padding: 14px 32px;
+  padding: 10px 20px;
   border-radius: 8px;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
   border: 2px solid rgba(255,255,255,0.3);
   transition: all 0.2s;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .btn-project { padding: 14px 28px; font-size: 16px; }
 }
 
 .btn-project:hover {
@@ -336,15 +342,20 @@ input, select, textarea {
 .btn-enquire {
   background: #f97316;
   color: #fff;
-  padding: 14px 32px;
+  padding: 10px 20px;
   border-radius: 8px;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
   border: 2px solid #f97316;
   transition: all 0.2s;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .btn-enquire { padding: 14px 28px; font-size: 16px; }
 }
 
 .btn-enquire:hover {
@@ -393,15 +404,20 @@ input, select, textarea {
 .btn-primary {
   background: #f97316;
   color: #fff;
-  padding: 16px 32px;
+  padding: 10px 20px;
   border-radius: 8px;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 14px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   transition: all 0.2s;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .btn-primary { padding: 14px 28px; font-size: 16px; }
 }
 
 .btn-primary:hover { background: #ea580c; }
@@ -418,12 +434,17 @@ input, select, textarea {
   background: rgba(255,255,255,0.1);
   color: #fff;
   backdrop-filter: blur(12px);
-  padding: 16px 32px;
+  padding: 10px 20px;
   border-radius: 8px;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 14px;
   border: 1px solid rgba(255,255,255,0.2);
   transition: all 0.2s;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .btn-secondary { padding: 14px 28px; font-size: 16px; }
 }
 
 .btn-secondary:hover { background: rgba(255,255,255,0.2); }
@@ -457,7 +478,7 @@ input, select, textarea {
   padding: 48px 0;
   position: relative;
   z-index: 20;
-  margin: -40px 16px 0;
+  margin: 0 16px;
   border-radius: 12px;
   box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
   display: flex;
@@ -468,7 +489,7 @@ input, select, textarea {
 }
 
 @media (min-width: 640px) {
-  .stats-bar { margin: -40px 32px 0; }
+  .stats-bar { margin: -20px 32px 0; }
 }
 @media (min-width: 768px) {
   .stats-bar { margin: -40px 80px 0; }
