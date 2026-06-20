@@ -36,4 +36,20 @@
       if (isMenuOpen) toggleMenu();
     });
   });
+
+  // Hero carousel
+  var carousel = document.getElementById('heroCarousel');
+  if (carousel) {
+    var slides = carousel.querySelectorAll('.slide');
+    var current = 0;
+    var total = slides.length;
+
+    if (total > 1) {
+      setInterval(function () {
+        slides[current].classList.remove('active');
+        current = (current + 1) % total;
+        slides[current].classList.add('active');
+      }, 4000);
+    }
+  }
 })();

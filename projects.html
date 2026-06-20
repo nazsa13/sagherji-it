@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sagherji Integrated Technologies - Projects</title>
+  <link rel="icon" type="image/png" href="SA.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .projects-hero {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 16px 80px;
+      background: linear-gradient(135deg, #172554 0%, #1e3a8a 50%, #2563eb 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .projects-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 50%, rgba(249,115,22,0.15) 0%, transparent 50%);
+    }
+
+    .projects-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+
+    .projects-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 56px;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .projects-sub {
+      font-size: 20px;
+      color: #cbd5e1;
+      margin-bottom: 48px;
+      line-height: 1.6;
+    }
+
+    .projects-placeholder {
+      background: rgba(255,255,255,0.05);
+      border: 2px dashed rgba(255,255,255,0.2);
+      border-radius: 16px;
+      padding: 64px 32px;
+      backdrop-filter: blur(8px);
+    }
+
+    .projects-placeholder h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .projects-placeholder p {
+      color: #94a3b8;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="nav">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <a href="index.html"><img src="Sagherji-png.png" alt="Sagherji Integrated Technologies Logo" class="nav-logo" /></a>
+          <span class="nav-brand-sub">Integrated Technologies</span>
+        </div>
+
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="index.html#services" class="nav-link">Services</a>
+          <a href="index.html#solutions" class="nav-link">Solutions</a>
+          <a href="projects.html" class="nav-link">Projects</a>
+          <a href="index.html#about" class="nav-link">About</a>
+          <a href="index.html#contact" class="nav-link">Contact</a>
+          <button class="btn-quote">Get Quote</button>
+        </div>
+
+        <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+          <span id="menu-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </span>
+          <span id="close-icon" style="display:none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="mobile-menu">
+      <a href="index.html" class="mobile-link">Home</a>
+      <a href="index.html#services" class="mobile-link">Services</a>
+      <a href="index.html#solutions" class="mobile-link">Solutions</a>
+      <a href="projects.html" class="mobile-link">Projects</a>
+      <a href="index.html#about" class="mobile-link">About</a>
+      <a href="index.html#contact" class="mobile-link">Contact</a>
+    </div>
+
+    <!-- Projects Hero -->
+    <section class="projects-hero">
+      <div class="projects-content">
+        <h1 class="projects-title">Our Projects</h1>
+        <p class="projects-sub">Explore our portfolio of integrated security, energy, and communication solutions.</p>
+        <div class="projects-placeholder">
+          <h3>Coming Soon</h3>
+          <p>We're building a dedicated page for each project category. Check back soon!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="section-container">
+        <div class="footer-grid">
+          <div class="footer-brand-col">
+            <img src="Sagherji-png.png" alt="Sagherji Integrated Technologies Logo" class="footer-logo" />
+            <p class="footer-desc">Leading provider of integrated security and smart technology solutions. We protect what matters most to you.</p>
+            <div class="footer-social">
+              <span class="social-icon">fb</span>
+              <span class="social-icon">tw</span>
+              <span class="social-icon">ln</span>
+              <span class="social-icon">ig</span>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h5 class="footer-col-title">Solutions</h5>
+            <ul class="footer-links">
+              <li><a href="#">Residential Security</a></li>
+              <li><a href="#">Commercial Protection</a></li>
+              <li><a href="#">Industrial Automation</a></li>
+              <li><a href="#">Government Projects</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h5 class="footer-col-title">Company</h5>
+            <ul class="footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Our Portfolio</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h5 class="footer-col-title">Newsletter</h5>
+            <p class="footer-newsletter-desc">Stay updated with the latest tech news.</p>
+            <div class="footer-newsletter">
+              <input type="email" class="newsletter-input" placeholder="Enter email" />
+              <button class="newsletter-btn">Join</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>&copy; 2026 SAGHERJI Integrated Technologies. All rights reserved.</div>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

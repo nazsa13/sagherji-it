@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800;900&display=swap');
+
 /* ========================================
    RESET & BASE
    ======================================== */
@@ -203,10 +205,23 @@ input, select, textarea {
   z-index: 0;
 }
 
-.hero-bg img {
+.hero-carousel {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  position: relative;
+}
+
+.hero-carousel .slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.hero-carousel .slide.active {
+  opacity: 1;
 }
 
 .hero-overlay {
@@ -255,6 +270,7 @@ input, select, textarea {
   color: #fff;
   line-height: 1.2;
   margin-bottom: 24px;
+  font-family: 'Playfair Display', serif;
 }
 
 @media (min-width: 768px) {
@@ -276,6 +292,102 @@ input, select, textarea {
 
 @media (min-width: 640px) {
   .hero-buttons { flex-direction: row; }
+}
+
+.hero-buttons-row-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+@media (min-width: 640px) {
+  .hero-buttons-row-2 { flex-direction: row; }
+}
+
+.btn-pair-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.btn-project {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  backdrop-filter: blur(8px);
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-project:hover {
+  background: rgba(255,255,255,0.25);
+  border-color: rgba(255,255,255,0.5);
+}
+
+.btn-enquire {
+  background: #f97316;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  border: 2px solid #f97316;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-enquire:hover {
+  background: #ea580c;
+  border-color: #ea580c;
+}
+
+.btn-section-project {
+  background: #1e3a8a;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  border: 2px solid #1e3a8a;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-section-project:hover {
+  background: #172554;
+  border-color: #172554;
+}
+
+.btn-section-enquire {
+  background: #f97316;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  border: 2px solid #f97316;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-section-enquire:hover {
+  background: #ea580c;
+  border-color: #ea580c;
 }
 
 .btn-primary {
@@ -421,6 +533,7 @@ input, select, textarea {
   font-weight: 900;
   color: #172554;
   margin-bottom: 16px;
+  font-family: 'Playfair Display', serif;
 }
 
 .section-divider {
@@ -557,6 +670,7 @@ input, select, textarea {
   font-size: 36px;
   font-weight: 900;
   margin-bottom: 24px;
+  font-family: 'Playfair Display', serif;
 }
 
 .features-desc {
@@ -701,6 +815,7 @@ input, select, textarea {
   font-weight: 900;
   color: #172554;
   margin-bottom: 24px;
+  font-family: 'Playfair Display', serif;
 }
 
 .contact-desc {
