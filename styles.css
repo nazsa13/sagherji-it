@@ -304,7 +304,7 @@ body.menu-open {
   min-height: 300px;
   display: flex;
   align-items: center;
-  padding: 140px 0 20px;
+  padding: 110px 0 20px;
   overflow: hidden;
 }
 
@@ -312,7 +312,7 @@ body.menu-open {
   .hero {
     min-height: 400px;
     aspect-ratio: 2 / 1;
-    padding: 160px 0 0;
+    padding: 120px 0 0;
   }
 }
 
@@ -450,7 +450,7 @@ body.menu-open {
 
   .hero {
     min-height: 560px;
-    padding: 115px 0 20px;
+    padding: 100px 0 20px;
   }
 
   .hero-overlay {
