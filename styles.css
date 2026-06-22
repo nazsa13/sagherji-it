@@ -1065,6 +1065,10 @@ input, select, textarea {
   background: var(--bg-primary);
 }
 
+.form-input::placeholder {
+  color: var(--text-muted);
+}
+
 .form-input:focus {
   box-shadow: 0 0 0 2px var(--air-force-blue);
 }
