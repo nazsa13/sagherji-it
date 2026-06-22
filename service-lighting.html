@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Lighting Solutions - Sagherji Integrated Technologies</title>
+  <link rel="icon" type="image/png" href="SA.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .page-hero { min-height: 50vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 16px 60px; background: linear-gradient(135deg, var(--baltic-blue-darker) 0%, var(--baltic-blue) 50%, var(--air-force-blue) 100%); position: relative; overflow: hidden; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 50%, rgba(232,155,23,0.12) 0%, transparent 50%); }
+    .page-content { position: relative; z-index: 1; max-width: 800px; }
+    .page-title { font-size: 48px; font-weight: 900; color: var(--text-on-dark); margin-bottom: 16px; }
+    .page-sub { font-size: 18px; color: #cbd5e1; margin-bottom: 0; line-height: 1.6; }
+    .service-detail { padding: 80px 0; background: var(--bg-primary); }
+    .service-detail-alt { padding: 80px 0; background: var(--bg-secondary); }
+    .detail-grid { display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; }
+    @media (min-width: 768px) { .detail-grid { grid-template-columns: 1fr 1fr; } }
+    .detail-heading { font-size: 28px; font-weight: 900; color: var(--baltic-blue-darker); margin-bottom: 16px; }
+    .detail-text { color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; }
+    .feature-list { display: flex; flex-direction: column; gap: 12px; }
+    .feature-item { display: flex; align-items: flex-start; gap: 12px; }
+    .feature-icon { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--golden-orange); display: flex; align-items: center; justify-content: center; color: #fff; margin-top: 2px; }
+    .feature-icon svg { width: 14px; height: 14px; }
+    .feature-label { color: var(--text-secondary); line-height: 1.6; }
+    .detail-img { width: 100%; border-radius: 16px; box-shadow: var(--shadow-lg); }
+    [data-theme="dark"] .detail-heading { color: var(--text-primary); }
+    @media (max-width: 767px) { .page-title { font-size: 32px; } }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <nav id="navbar" class="nav">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <a href="index.html"><img src="Sagherji-png.png" alt="Sagherji Integrated Technologies Logo" class="nav-logo" /></a>
+          <span class="nav-brand-sub">Integrated Technologies</span>
+        </div>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="index.html#services" class="nav-link">Services</a>
+          <a href="projects.html" class="nav-link">Projects</a>
+          <a href="index.html#about" class="nav-link">About</a>
+          <a href="index.html#contact" class="nav-link">Contact</a>
+          <button class="btn-quote">Get Quote</button>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <section class="page-hero">
+      <div class="page-content">
+        <h1 class="page-title">Smart Lighting Solutions</h1>
+        <p class="page-sub">Energy-efficient LED systems with intelligent controls for residential, commercial, and industrial spaces.</p>
+      </div>
+    </section>
+
+    <section class="service-detail">
+      <div class="section-container">
+        <div class="detail-grid">
+          <div>
+            <h2 class="detail-heading">Intelligent Illumination</h2>
+            <p class="detail-text">Transform any space with our smart lighting solutions. From automated dimming and color tuning to occupancy-based scheduling, our systems reduce energy consumption while enhancing comfort and ambience.</p>
+            <p class="detail-text">All fixtures can be controlled via smartphone, wall panel, or voice assistant — giving you full flexibility to create the perfect lighting scene for any moment.</p>
+            <div class="feature-list">
+              <div class="feature-item"><span class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="feature-label">High-efficiency LED &amp; DALI dimming</span></div>
+              <div class="feature-item"><span class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="feature-label">Motion &amp; daylight sensor integration</span></div>
+              <div class="feature-item"><span class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="feature-label">Scene control via app, voice, or panel</span></div>
+              <div class="feature-item"><span class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="feature-label">Up to 70% energy savings</span></div>
+            </div>
+          </div>
+          <div><img class="detail-img" src="https://www.rmcad.edu/wp-content/uploads/2024/07/shutterstock_600343619-scaled.jpg" alt="Smart lighting" /></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-detail-alt">
+      <div class="section-container">
+        <div class="detail-grid">
+          <div><img class="detail-img" src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" alt="Modern office lighting" /></div>
+          <div>
+            <h2 class="detail-heading">Designed for Any Space</h2>
+            <p class="detail-text">Whether you are outfitting a modern office, a luxury villa, or an industrial warehouse, our smart lighting solutions are scalable and customizable. We use open standards like DALI and Zigbee to ensure compatibility with the widest range of fixtures.</p>
+            <p class="detail-text">Our team provides end-to-end service — from lighting design and fixture selection to installation, programming, and ongoing support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="section-container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h2 class="contact-title">Let's Secure Your <br/>Project Together</h2>
+            <p class="contact-desc">Have a question or ready to start your journey with us? Our team is standing by to provide expert consultation.</p>
+            <div class="contact-details">
+              <div class="contact-detail">
+                <div class="contact-icon-box"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                <div><h5 class="detail-label">Our Headquarters</h5><p class="detail-text">Industrial Hub Center, Technology Plaza<br/>Suite 402, UAE</p></div>
+              </div>
+              <div class="contact-detail">
+                <div class="contact-icon-box"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                <div><h5 class="detail-label">Call Us</h5><p class="detail-text">+971 (0) 50 123 4567<br/>+971 (0) 4 888 0000</p></div>
+              </div>
+              <div class="contact-detail">
+                <div class="contact-icon-box"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                <div><h5 class="detail-label">Email Support</h5><p class="detail-text">info@sagherji.tech<br/>sales@sagherji.tech</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form-wrap">
+            <form class="contact-form">
+              <div class="form-field"><label class="form-label">Full Name</label><input type="text" class="form-input" placeholder="John Doe" /></div>
+              <div class="form-field"><label class="form-label">Email Address</label><input type="email" class="form-input" placeholder="john@example.com" /></div>
+              <div class="form-field form-field-full"><label class="form-label">Interest</label><input type="text" class="form-input" placeholder="e.g. Solar Energy, CCTV..." /></div>
+              <div class="form-field form-field-full"><label class="form-label">Message</label><textarea class="form-input form-textarea" rows="4" placeholder="Tell us about your project..."></textarea></div>
+              <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="section-container">
+        <div class="footer-grid">
+          <div class="footer-brand-col">
+            <img src="Sagherji-png.png" alt="Sagherji Integrated Technologies Logo" class="footer-logo" />
+            <p class="footer-desc">Leading provider of integrated security and smart technology solutions. We protect what matters most to you.</p>
+            <div class="footer-social"><span class="social-icon">fb</span><span class="social-icon">tw</span><span class="social-icon">ln</span><span class="social-icon">ig</span></div>
+          </div>
+          <div class="footer-col">
+            <h5 class="footer-col-title">Solutions</h5>
+            <ul class="footer-links">
+              <li><a href="#">Residential Security</a></li>
+              <li><a href="#">Commercial Protection</a></li>
+              <li><a href="#">Industrial Automation</a></li>
+              <li><a href="#">Government Projects</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5 class="footer-col-title">Company</h5>
+            <ul class="footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Our Portfolio</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5 class="footer-col-title">Newsletter</h5>
+            <p class="footer-newsletter-desc">Stay updated with the latest tech news.</p>
+            <div class="footer-newsletter"><input type="email" class="newsletter-input" placeholder="Enter email" /><button class="newsletter-btn">Join</button></div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div>&copy; 2026 SAGHERJI Integrated Technologies. All rights reserved.</div>
+          <div class="footer-bottom-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Sitemap</a></div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
