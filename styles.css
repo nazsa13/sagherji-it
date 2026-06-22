@@ -104,7 +104,7 @@ input, select, textarea {
   background: var(--bg-primary);
   box-shadow: var(--shadow-sm);
   transition: all 0.3s ease;
-  padding: 14px 0;
+  padding: 18px 0;
   transition: padding 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -136,7 +136,7 @@ input, select, textarea {
 }
 
 .nav-logo {
-  height: 124px;
+  height: 150px;
   width: auto;
   transition: height 0.25s ease;
 }
@@ -422,7 +422,7 @@ body.menu-open {
 
 @media (max-width: 767px) {
   .nav {
-    padding: 10px 0;
+    padding: 12px 0;
   }
 
   .nav.scrolled {
@@ -430,7 +430,7 @@ body.menu-open {
   }
 
   .nav-logo {
-    height: 96px;
+    height: 110px;
   }
 
   .nav.scrolled .nav-logo {

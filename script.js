@@ -7,7 +7,7 @@
 
   // Scroll handler
   function handleScroll() {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 10) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
@@ -15,7 +15,6 @@
   }
 
   window.addEventListener('scroll', handleScroll);
-  handleScroll();
 
   // Mobile menu toggle
   function setMenuState(open) {
