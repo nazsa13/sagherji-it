@@ -14,6 +14,7 @@
     }
   }
 
+  handleScroll();
   window.addEventListener('scroll', handleScroll);
 
   // Mobile menu toggle
