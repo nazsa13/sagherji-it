@@ -58,6 +58,10 @@ body {
   line-height: 1.5;
 }
 
+button, input, select, textarea {
+  font-family: 'Roboto', sans-serif;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -140,7 +144,7 @@ input, select, textarea {
 
 .nav-brand-sub {
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-muted);
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -539,7 +543,7 @@ input, select, textarea {
 
 .stat-label {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -779,7 +783,7 @@ input, select, textarea {
 
 .update-text {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 /* Features visual */
@@ -940,7 +944,7 @@ input, select, textarea {
 
 .about-stat-label {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.08em;
