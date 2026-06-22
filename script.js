@@ -1,12 +1,5 @@
 (function () {
   var navbar = document.getElementById('navbar');
-  var menuToggle = document.getElementById('menu-toggle');
-  var menuIcon = document.getElementById('menu-icon');
-  var closeIcon = document.getElementById('close-icon');
-  var mobileMenu = document.getElementById('mobile-menu');
-  var mobileLinks = mobileMenu.querySelectorAll('.mobile-link');
-
-  var isMenuOpen = false;
 
   // Scroll handler
   function handleScroll() {
@@ -19,23 +12,6 @@
 
   window.addEventListener('scroll', handleScroll);
   handleScroll();
-
-  // Mobile menu toggle
-  function toggleMenu() {
-    isMenuOpen = !isMenuOpen;
-    mobileMenu.classList.toggle('open', isMenuOpen);
-    menuIcon.style.display = isMenuOpen ? 'none' : 'block';
-    closeIcon.style.display = isMenuOpen ? 'block' : 'none';
-  }
-
-  menuToggle.addEventListener('click', toggleMenu);
-
-  // Close mobile menu on link click
-  mobileLinks.forEach(function (link) {
-    link.addEventListener('click', function () {
-      if (isMenuOpen) toggleMenu();
-    });
-  });
 
   // Hero carousel
   var carousel = document.getElementById('heroCarousel');
@@ -56,7 +32,6 @@
   // Dark mode toggle
   var htmlEl = document.documentElement;
   var themeToggle = document.getElementById('theme-toggle');
-  var themeToggleMobile = document.getElementById('theme-toggle-mobile');
 
   function setTheme(dark) {
     if (dark) {
@@ -66,7 +41,6 @@
       htmlEl.removeAttribute('data-theme');
       localStorage.setItem('theme', 'light');
     }
-    // Update all toggle button icons
     document.querySelectorAll('.theme-toggle').forEach(function (btn) {
       var sun = btn.querySelector('.sun-icon');
       var moon = btn.querySelector('.moon-icon');
@@ -77,7 +51,6 @@
     });
   }
 
-  // Load saved preference
   var saved = localStorage.getItem('theme');
   if (saved === 'dark') setTheme(true);
 
@@ -87,5 +60,4 @@
   }
 
   if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
-  if (themeToggleMobile) themeToggleMobile.addEventListener('click', toggleTheme);
 })();
