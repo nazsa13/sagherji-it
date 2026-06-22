@@ -190,19 +190,18 @@ input, select, textarea {
    ======================================== */
 .hero {
   position: relative;
-  min-height: 350px;
-  max-height: 75vw;
+  min-height: 300px;
   display: flex;
   align-items: center;
-  padding: 100px 0 40px;
+  padding: 80px 0 20px;
   overflow: hidden;
 }
 
 @media (min-width: 768px) {
   .hero {
-    min-height: 450px;
-    max-height: 65vw;
-    padding: 100px 0 60px;
+    min-height: 400px;
+    aspect-ratio: 2 / 1;
+    padding: 80px 0 0;
   }
 }
 
@@ -234,7 +233,7 @@ input, select, textarea {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, #172554, rgba(30, 58, 138, 0.8), transparent);
+  background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.2), transparent);
 }
 
 .hero-content {
