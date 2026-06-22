@@ -1,21 +1,8 @@
 (function () {
-  var navbar = document.getElementById('navbar');
   var menuToggle = document.getElementById('menu-toggle');
   var mobileMenu = document.getElementById('mobile-menu');
   var menuIcon = document.getElementById('menu-icon');
   var closeIcon = document.getElementById('close-icon');
-
-  // Scroll handler
-  function handleScroll() {
-    if (window.scrollY > 10) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  }
-
-  handleScroll();
-  window.addEventListener('scroll', handleScroll);
 
   // Mobile menu toggle
   function setMenuState(open) {
