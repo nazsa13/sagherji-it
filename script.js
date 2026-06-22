@@ -1,5 +1,9 @@
 (function () {
   var navbar = document.getElementById('navbar');
+  var menuToggle = document.getElementById('menu-toggle');
+  var mobileMenu = document.getElementById('mobile-menu');
+  var menuIcon = document.getElementById('menu-icon');
+  var closeIcon = document.getElementById('close-icon');
 
   // Scroll handler
   function handleScroll() {
@@ -12,6 +16,34 @@
 
   window.addEventListener('scroll', handleScroll);
   handleScroll();
+
+  // Mobile menu toggle
+  function setMenuState(open) {
+    if (!mobileMenu) return;
+    mobileMenu.classList.toggle('open', open);
+    document.body.classList.toggle('menu-open', open);
+    if (menuIcon) menuIcon.style.display = open ? 'none' : 'inline-flex';
+    if (closeIcon) closeIcon.style.display = open ? 'inline-flex' : 'none';
+  }
+
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', function () {
+      var isOpen = mobileMenu.classList.contains('open');
+      setMenuState(!isOpen);
+    });
+
+    mobileMenu.querySelectorAll('.mobile-link, .mobile-quote, .mobile-theme-toggle').forEach(function (el) {
+      el.addEventListener('click', function () {
+        setMenuState(false);
+      });
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth >= 768) {
+        setMenuState(false);
+      }
+    });
+  }
 
   // Hero carousel
   var carousel = document.getElementById('heroCarousel');
@@ -32,6 +64,7 @@
   // Dark mode toggle
   var htmlEl = document.documentElement;
   var themeToggle = document.getElementById('theme-toggle');
+  var themeToggleMobile = document.getElementById('theme-toggle-mobile');
 
   function setTheme(dark) {
     if (dark) {
@@ -60,4 +93,5 @@
   }
 
   if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+  if (themeToggleMobile) themeToggleMobile.addEventListener('click', toggleTheme);
 })();
