@@ -52,4 +52,40 @@
       }, 4000);
     }
   }
+
+  // Dark mode toggle
+  var htmlEl = document.documentElement;
+  var themeToggle = document.getElementById('theme-toggle');
+  var themeToggleMobile = document.getElementById('theme-toggle-mobile');
+
+  function setTheme(dark) {
+    if (dark) {
+      htmlEl.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      htmlEl.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+    }
+    // Update all toggle button icons
+    document.querySelectorAll('.theme-toggle').forEach(function (btn) {
+      var sun = btn.querySelector('.sun-icon');
+      var moon = btn.querySelector('.moon-icon');
+      if (sun && moon) {
+        sun.style.display = dark ? 'none' : 'block';
+        moon.style.display = dark ? 'block' : 'none';
+      }
+    });
+  }
+
+  // Load saved preference
+  var saved = localStorage.getItem('theme');
+  if (saved === 'dark') setTheme(true);
+
+  function toggleTheme() {
+    var isDark = htmlEl.getAttribute('data-theme') === 'dark';
+    setTheme(!isDark);
+  }
+
+  if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+  if (themeToggleMobile) themeToggleMobile.addEventListener('click', toggleTheme);
 })();
