@@ -103,12 +103,12 @@ input, select, textarea {
   z-index: 50;
   background: var(--bg-primary);
   box-shadow: var(--shadow-sm);
-  padding: 24px 0;
+  padding: 18px 0;
   transition: padding 0.3s ease, box-shadow 0.3s ease;
 }
 
 .nav.scrolled {
-  padding: 8px 0;
+  padding: 6px 0;
   box-shadow: 0 4px 20px rgba(0,0,0,0.12);
 }
 
@@ -136,13 +136,13 @@ input, select, textarea {
 }
 
 .nav-logo {
-  width: clamp(260px, 30vw, 420px);
+  width: clamp(200px, 26vw, 340px);
   height: auto;
   transition: width 0.3s ease;
 }
 
 .nav.scrolled .nav-logo {
-  width: clamp(160px, 18vw, 240px);
+  width: clamp(130px, 16vw, 180px);
 }
 
 /* Desktop nav links */
@@ -158,13 +158,13 @@ input, select, textarea {
 
 .nav-link {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 15px;
   transition: font-size 0.3s ease, color 0.2s;
   color: var(--text-secondary);
 }
 
 .nav.scrolled .nav-link {
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .nav-link:hover { color: var(--golden-orange); }
@@ -172,17 +172,17 @@ input, select, textarea {
 .btn-quote {
   background: var(--golden-orange);
   color: var(--text-on-dark);
-  padding: 10px 24px;
+  padding: 8px 20px;
   border-radius: 9999px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   transition: padding 0.3s ease, font-size 0.3s ease, background 0.2s, box-shadow 0.2s;
   box-shadow: var(--shadow-sm);
 }
 
 .nav.scrolled .btn-quote {
-  padding: 6px 16px;
-  font-size: 13px;
+  padding: 5px 14px;
+  font-size: 12px;
 }
 
 .btn-quote:hover {
@@ -304,7 +304,7 @@ body.menu-open {
   min-height: 300px;
   display: flex;
   align-items: center;
-  padding: 110px 0 20px;
+  padding: 100px 0 20px;
   overflow: hidden;
 }
 
@@ -312,7 +312,7 @@ body.menu-open {
   .hero {
     min-height: 400px;
     aspect-ratio: 2 / 1;
-    padding: 120px 0 0;
+    padding: 110px 0 0;
   }
 }
 
@@ -433,24 +433,24 @@ body.menu-open {
 
 @media (max-width: 767px) {
   .nav {
-    padding: 18px 0;
+    padding: 14px 0;
   }
 
   .nav.scrolled {
-    padding: 6px 0;
+    padding: 4px 0;
   }
 
   .nav-logo {
-    width: min(88vw, 360px);
+    width: min(85vw, 300px);
   }
 
   .nav.scrolled .nav-logo {
-    width: min(60vw, 200px);
+    width: min(55vw, 150px);
   }
 
   .hero {
     min-height: 560px;
-    padding: 100px 0 20px;
+    padding: 90px 0 20px;
   }
 
   .hero-overlay {
