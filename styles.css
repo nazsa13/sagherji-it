@@ -296,11 +296,10 @@ input, select, textarea {
 
 .hero-title {
   font-size: 32px;
-  font-weight: 800;
+  font-weight: 900;
   color: var(--text-on-dark);
   line-height: 1.2;
   margin-bottom: 16px;
-  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
 }
 
 @media (min-width: 640px) {
@@ -537,7 +536,7 @@ input, select, textarea {
 
 .stat-val {
   font-size: 30px;
-  font-weight: 900;
+  font-weight: 500;
   color: var(--baltic-blue);
 }
 
@@ -589,7 +588,6 @@ input, select, textarea {
   font-weight: 900;
   color: var(--baltic-blue-darker);
   margin-bottom: 16px;
-  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
 }
 
 .section-divider {
@@ -727,7 +725,6 @@ input, select, textarea {
   font-size: 36px;
   font-weight: 900;
   margin-bottom: 24px;
-  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
 }
 
 .features-desc {
@@ -937,9 +934,8 @@ input, select, textarea {
 
 .about-stat-num {
   font-size: 36px;
-  font-weight: 900;
+  font-weight: 500;
   color: var(--golden-orange);
-  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
 }
 
 .about-stat-label {
@@ -978,7 +974,6 @@ input, select, textarea {
   font-weight: 900;
   color: var(--baltic-blue-darker);
   margin-bottom: 24px;
-  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
 }
 
 .contact-desc {
