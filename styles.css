@@ -136,13 +136,13 @@ input, select, textarea {
 }
 
 .nav-logo {
-  height: 150px;
-  width: auto;
-  transition: height 0.25s ease;
+  width: clamp(240px, 30vw, 430px);
+  height: auto;
+  transition: width 0.25s ease;
 }
 
 .nav.scrolled .nav-logo {
-  height: 78px;
+  width: clamp(170px, 20vw, 300px);
 }
 
 /* Desktop nav links */
@@ -430,11 +430,11 @@ body.menu-open {
   }
 
   .nav-logo {
-    height: 110px;
+    width: min(88vw, 360px);
   }
 
   .nav.scrolled .nav-logo {
-    height: 64px;
+    width: min(68vw, 260px);
   }
 
   .hero {
