@@ -131,24 +131,8 @@ input, select, textarea {
 }
 
 .nav-logo {
-  height: 48px;
+  height: 62px;
   width: auto;
-}
-
-.nav-brand {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  line-height: 1;
-}
-
-.nav-brand-sub {
-  font-size: 10px;
-  font-weight: 500;
-  color: var(--text-muted);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin-top: 2px;
 }
 
 /* Desktop nav links */
@@ -432,12 +416,7 @@ body.menu-open {
   }
 
   .nav-logo {
-    height: 38px;
-  }
-
-  .nav-brand-sub {
-    font-size: 8px;
-    letter-spacing: 0.16em;
+    height: 52px;
   }
 
   .hero {
