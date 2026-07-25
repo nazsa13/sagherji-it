@@ -117,6 +117,13 @@
     wrapper.addEventListener('mouseenter', function () { isPaused = true; });
     wrapper.addEventListener('mouseleave', function () { isPaused = false; });
 
+    wrapper.addEventListener('wheel', function (e) {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        e.preventDefault();
+        wrapper.scrollLeft += e.deltaY;
+      }
+    }, { passive: false });
+
     animId = requestAnimationFrame(step);
   });
 })();
