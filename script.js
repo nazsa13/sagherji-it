@@ -93,4 +93,30 @@
 
   if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
   if (themeToggleMobile) themeToggleMobile.addEventListener('click', toggleTheme);
+
+  // Partner logo auto-scroll
+  var partnerWrappers = document.querySelectorAll('.partners-track-wrapper');
+  partnerWrappers.forEach(function (wrapper) {
+    var section = wrapper.closest('.partners-section');
+    if (section && section.classList.contains('partners-center')) return;
+    if (wrapper.scrollWidth <= wrapper.clientWidth) return;
+
+    var isPaused = false;
+    var animId = null;
+
+    function step() {
+      if (!isPaused) {
+        wrapper.scrollLeft += 1;
+        if (wrapper.scrollLeft >= wrapper.scrollWidth / 2) {
+          wrapper.scrollLeft = 0;
+        }
+      }
+      animId = requestAnimationFrame(step);
+    }
+
+    wrapper.addEventListener('mouseenter', function () { isPaused = true; });
+    wrapper.addEventListener('mouseleave', function () { isPaused = false; });
+
+    animId = requestAnimationFrame(step);
+  });
 })();

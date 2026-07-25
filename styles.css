@@ -1218,10 +1218,16 @@ body.menu-open {
 
 .partners-track-wrapper {
   overflow-x: auto;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: var(--golden-orange) transparent;
-  padding-bottom: 8px;
+  padding: 24px 0;
+  scroll-behavior: smooth;
+}
+
+.partners-center .partners-track-wrapper {
+  overflow: visible;
 }
 
 .partners-track-wrapper::-webkit-scrollbar {
@@ -1262,6 +1268,7 @@ body.menu-open {
   height: 80px;
   width: auto;
   transition: transform 0.3s ease;
+  flex-shrink: 0;
 }
 
 .partners-slide img:hover {
