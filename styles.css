@@ -1231,16 +1231,17 @@ body.menu-open {
 }
 
 .partners-slide img {
-  height: 50px;
+  height: 80px;
   width: auto;
-  filter: grayscale(100%);
-  opacity: 0.5;
-  transition: filter 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .partners-slide img:hover {
-  filter: grayscale(0%);
-  opacity: 1;
+  transform: scale(1.4);
+}
+
+.partners-track:hover {
+  animation-play-state: paused;
 }
 
 @keyframes scrollLogos {
