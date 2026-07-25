@@ -612,26 +612,6 @@ body.menu-open {
 .btn-secondary:hover { background: rgba(255,255,255,0.2); }
 
 /* Hero decorative elements */
-.hero-decor {
-  position: absolute;
-  bottom: 40px;
-  right: 40px;
-  display: none;
-  opacity: 0.3;
-}
-
-@media (min-width: 1024px) {
-  .hero-decor { display: block; }
-}
-
-.hero-circle {
-  width: 256px;
-  height: 256px;
-  border: 8px solid rgba(255,255,255,0.1);
-  border-radius: 50%;
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
 /* ========================================
    STATS BAR
    ======================================== */
