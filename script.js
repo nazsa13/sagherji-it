@@ -94,17 +94,18 @@
   if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
   if (themeToggleMobile) themeToggleMobile.addEventListener('click', toggleTheme);
 
-  // Partner logo: horizontal wheel scroll (document-level capture)
-  document.addEventListener('wheel', function (e) {
-    var wrapper = e.target.closest('.partners-track-wrapper');
+  // Partner logo: horizontal wheel scroll
+  document.querySelectorAll('.partners-section:not(.partners-center)').forEach(function (section) {
+    var wrapper = section.querySelector('.partners-track-wrapper');
     if (!wrapper) return;
-    var section = wrapper.closest('.partners-section');
-    if (section && section.classList.contains('partners-center')) return;
-    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-      e.preventDefault();
-      wrapper.scrollLeft += e.deltaY;
-    }
-  }, { passive: false, capture: true });
+
+    section.addEventListener('wheel', function (e) {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        e.preventDefault();
+        wrapper.scrollLeft += e.deltaY;
+      }
+    }, { passive: false });
+  });
 
   // Partner logo: auto-scroll
   document.querySelectorAll('.partners-track-wrapper').forEach(function (wrapper) {
