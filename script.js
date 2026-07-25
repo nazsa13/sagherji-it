@@ -94,19 +94,22 @@
   if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
   if (themeToggleMobile) themeToggleMobile.addEventListener('click', toggleTheme);
 
-  // Partner logo auto-scroll + wheel-to-horizontal
-  var partnerWrappers = document.querySelectorAll('.partners-track-wrapper');
-  partnerWrappers.forEach(function (wrapper) {
+  // Partner logo: horizontal wheel scroll (document-level capture)
+  document.addEventListener('wheel', function (e) {
+    var wrapper = e.target.closest('.partners-track-wrapper');
+    if (!wrapper) return;
     var section = wrapper.closest('.partners-section');
     if (section && section.classList.contains('partners-center')) return;
+    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+      e.preventDefault();
+      wrapper.scrollLeft += e.deltaY;
+    }
+  }, { passive: false, capture: true });
 
-    wrapper.addEventListener('wheel', function (e) {
-      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        e.preventDefault();
-        wrapper.scrollLeft += e.deltaY;
-      }
-    }, { passive: false });
-
+  // Partner logo: auto-scroll
+  document.querySelectorAll('.partners-track-wrapper').forEach(function (wrapper) {
+    var section = wrapper.closest('.partners-section');
+    if (section && section.classList.contains('partners-center')) return;
     if (wrapper.scrollWidth <= wrapper.clientWidth) return;
 
     var isPaused = false;
