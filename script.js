@@ -94,11 +94,19 @@
   if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
   if (themeToggleMobile) themeToggleMobile.addEventListener('click', toggleTheme);
 
-  // Partner logo auto-scroll
+  // Partner logo auto-scroll + wheel-to-horizontal
   var partnerWrappers = document.querySelectorAll('.partners-track-wrapper');
   partnerWrappers.forEach(function (wrapper) {
     var section = wrapper.closest('.partners-section');
     if (section && section.classList.contains('partners-center')) return;
+
+    wrapper.addEventListener('wheel', function (e) {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        e.preventDefault();
+        wrapper.scrollLeft += e.deltaY;
+      }
+    }, { passive: false });
+
     if (wrapper.scrollWidth <= wrapper.clientWidth) return;
 
     var isPaused = false;
@@ -116,13 +124,6 @@
 
     wrapper.addEventListener('mouseenter', function () { isPaused = true; });
     wrapper.addEventListener('mouseleave', function () { isPaused = false; });
-
-    wrapper.addEventListener('wheel', function (e) {
-      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        e.preventDefault();
-        wrapper.scrollLeft += e.deltaY;
-      }
-    }, { passive: false });
 
     animId = requestAnimationFrame(step);
   });
