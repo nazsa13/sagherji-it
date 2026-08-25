@@ -200,14 +200,14 @@
     setTimeout(function () { t.classList.remove('show'); }, 4000);
   }
 
-  function submitToFormSubmit(payload, endpoint) {
-    return fetch(endpoint, {
+  function submitToVercel(payload) {
+    return fetch('/api/send', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     }).then(function (res) {
-      if (!res.ok) throw new Error('Network error');
-      return res.json().catch(function () { return {}; });
+      if (!res.ok) return res.json().then(function (j) { throw new Error(j.error || 'Failed'); });
+      return res.json();
     });
   }
 
@@ -231,15 +231,13 @@
         phone: data.get('phone'),
         propertyType: data.get('propertyType'),
         message: data.get('message'),
-        _subject: 'New Free Consultation - ' + (data.get('propertyType') || 'General'),
-        _captcha: 'false',
-        _template: 'table'
+        formType: 'consultation'
       };
       btn.disabled = true;
       btn.textContent = 'Sending...';
       consultSuccess.classList.remove('show');
       consultError.classList.remove('show');
-      submitToFormSubmit(payload, 'https://formsubmit.co/ajax/info@sagherji.com')
+      submitToVercel(payload)
         .then(function () {
           consultSuccess.classList.add('show');
           showToast('Consultation request sent!', 'success');
@@ -320,12 +318,10 @@
         email: emailVal,
         interest: interestVal,
         message: messageVal,
-        _subject: 'New Contact Form - ' + (interestVal || 'General Inquiry'),
-        _captcha: 'false',
-        _template: 'table'
+        formType: 'contact'
       };
 
-      submitToFormSubmit(payload, 'https://formsubmit.co/ajax/info@sagherji.com')
+      submitToVercel(payload)
         .then(function () {
           successEl.classList.add('show');
           showToast('Message sent successfully!', 'success');
@@ -358,7 +354,7 @@
       btn.disabled = true;
       var orig = btn.textContent;
       btn.textContent = '...';
-      submitToFormSubmit({ email: email, _subject: 'New Newsletter Subscription', _captcha: 'false' }, 'https://formsubmit.co/ajax/info@sagherji.com')
+      submitToVercel({ name: 'Newsletter', email: email, message: 'Newsletter subscription request', formType: 'newsletter' })
         .then(function () {
           showToast('Subscribed! Thank you.', 'success');
           input.value = '';
