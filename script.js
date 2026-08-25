@@ -187,15 +187,74 @@
     if (e.key === 'Escape' && consultOverlay.classList.contains('open')) closeConsult(true);
   });
 
+  function showToast(msg, type) {
+    var t = document.getElementById('appToast');
+    if (!t) {
+      t = document.createElement('div');
+      t.id = 'appToast';
+      t.className = 'toast';
+      document.body.appendChild(t);
+    }
+    t.textContent = msg;
+    t.className = 'toast show ' + (type || '');
+    setTimeout(function () { t.classList.remove('show'); }, 4000);
+  }
+
+  function submitToFormSubmit(payload, endpoint) {
+    return fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    }).then(function (res) {
+      if (!res.ok) throw new Error('Network error');
+      return res.json().catch(function () { return {}; });
+    });
+  }
+
   if (consultForm) {
+    var consultSuccess = document.createElement('div');
+    consultSuccess.className = 'form-success';
+    consultSuccess.textContent = 'Thank you! Your request has been sent. We will contact you shortly.';
+    var consultError = document.createElement('div');
+    consultError.className = 'form-error';
+    consultForm.appendChild(consultSuccess);
+    consultForm.appendChild(consultError);
+
     consultForm.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!consultForm.checkValidity()) { consultForm.reportValidity(); return; }
       var data = new FormData(consultForm);
-      var subject = encodeURIComponent('Free Consultation - ' + (data.get('propertyType') || ''));
-      var body = encodeURIComponent('Name: ' + data.get('name') + '\nEmail: ' + data.get('email') + '\nPhone: ' + data.get('phone') + '\nProperty Type: ' + data.get('propertyType') + '\n\nMessage:\n' + data.get('message'));
-      window.location.href = 'mailto:info@sagherji.tech?subject=' + subject + '&body=' + body;
-      closeConsult(true);
+      var btn = consultForm.querySelector('.consult-submit');
+      var payload = {
+        name: data.get('name'),
+        email: data.get('email'),
+        phone: data.get('phone'),
+        propertyType: data.get('propertyType'),
+        message: data.get('message'),
+        _subject: 'New Free Consultation - ' + (data.get('propertyType') || 'General'),
+        _captcha: 'false',
+        _template: 'table'
+      };
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      consultSuccess.classList.remove('show');
+      consultError.classList.remove('show');
+      submitToFormSubmit(payload, 'https://formsubmit.co/ajax/info@sagherji.tech')
+        .then(function () {
+          consultSuccess.classList.add('show');
+          showToast('Consultation request sent!', 'success');
+          consultForm.reset();
+          setTimeout(function () { closeConsult(true); consultSuccess.classList.remove('show'); }, 2500);
+        })
+        .catch(function () {
+          consultError.textContent = 'Failed to send. Please try again or email info@sagherji.tech';
+          consultError.classList.add('show');
+          showToast('Failed to send. Please try again.', 'error');
+        })
+        .then(function () {
+          btn.disabled = false;
+          btn.textContent = 'Request Consultation';
+        });
     });
   }
 
@@ -219,5 +278,93 @@
         openConsult();
       });
     }
+  });
+
+  document.querySelectorAll('.contact-form').forEach(function (form) {
+    if (form.dataset.bound) return;
+    form.dataset.bound = '1';
+    var successEl = document.createElement('div');
+    successEl.className = 'contact-success';
+    successEl.textContent = 'Thank you! Your message has been sent. We will reply shortly.';
+    var errorEl = document.createElement('div');
+    errorEl.className = 'contact-error';
+    form.parentNode.appendChild(successEl);
+    form.parentNode.appendChild(errorEl);
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var inputs = form.querySelectorAll('input, textarea, select');
+      var nameVal = (inputs[0] && inputs[0].value.trim()) || '';
+      var emailVal = (inputs[1] && inputs[1].value.trim()) || '';
+      var interestVal = (inputs[2] && inputs[2].value.trim()) || '';
+      var messageVal = (form.querySelector('textarea') && form.querySelector('textarea').value.trim()) || '';
+      if (!nameVal || !emailVal || !messageVal) {
+        errorEl.textContent = 'Please fill in Name, Email and Message.';
+        errorEl.classList.add('show');
+        successEl.classList.remove('show');
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+        errorEl.textContent = 'Please enter a valid email address.';
+        errorEl.classList.add('show');
+        return;
+      }
+      var btn = form.querySelector('.btn-submit');
+      var origText = btn ? btn.textContent : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+      successEl.classList.remove('show');
+      errorEl.classList.remove('show');
+
+      var payload = {
+        name: nameVal,
+        email: emailVal,
+        interest: interestVal,
+        message: messageVal,
+        _subject: 'New Contact Form - ' + (interestVal || 'General Inquiry'),
+        _captcha: 'false',
+        _template: 'table'
+      };
+
+      submitToFormSubmit(payload, 'https://formsubmit.co/ajax/info@sagherji.tech')
+        .then(function () {
+          successEl.classList.add('show');
+          showToast('Message sent successfully!', 'success');
+          form.reset();
+          setTimeout(function () { successEl.classList.remove('show'); }, 5000);
+        })
+        .catch(function () {
+          errorEl.textContent = 'Failed to send. Please email directly to info@sagherji.tech';
+          errorEl.classList.add('show');
+          showToast('Failed to send. Please try again.', 'error');
+        })
+        .then(function () {
+          if (btn) { btn.disabled = false; btn.textContent = origText; }
+        });
+    });
+  });
+
+  document.querySelectorAll('.footer-newsletter').forEach(function (wrap) {
+    var input = wrap.querySelector('.newsletter-input');
+    var btn = wrap.querySelector('.newsletter-btn');
+    if (!input || !btn || wrap.dataset.bound) return;
+    wrap.dataset.bound = '1';
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var email = input.value.trim();
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showToast('Please enter a valid email.', 'error');
+        return;
+      }
+      btn.disabled = true;
+      var orig = btn.textContent;
+      btn.textContent = '...';
+      submitToFormSubmit({ email: email, _subject: 'New Newsletter Subscription', _captcha: 'false' }, 'https://formsubmit.co/ajax/info@sagherji.tech')
+        .then(function () {
+          showToast('Subscribed! Thank you.', 'success');
+          input.value = '';
+        })
+        .catch(function () { showToast('Failed to subscribe. Try again.', 'error'); })
+        .then(function () { btn.disabled = false; btn.textContent = orig; });
+    });
   });
 })();

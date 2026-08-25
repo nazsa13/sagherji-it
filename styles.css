@@ -1621,6 +1621,11 @@ body.menu-open {
 
 .consult-submit:hover { background: var(--baltic-blue-dark); }
 
+.consult-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .consult-note {
   grid-column: 1 / -1;
   text-align: center;
@@ -1628,6 +1633,90 @@ body.menu-open {
   color: var(--text-muted);
   margin-top: -4px;
 }
+
+.form-success {
+  display: none;
+  grid-column: 1 / -1;
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.form-success.show { display: block; }
+
+.form-error {
+  display: none;
+  grid-column: 1 / -1;
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.form-error.show { display: block; }
+
+.contact-success {
+  display: none;
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.contact-success.show { display: block; }
+
+.contact-error {
+  display: none;
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.contact-error.show { display: block; }
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: var(--baltic-blue-darker);
+  color: var(--text-on-dark);
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: var(--shadow-lg);
+  z-index: 200;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  max-width: 90vw;
+  text-align: center;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.toast.success { background: #065f46; }
+.toast.error { background: #991b1b; }
 
 /* ========================================
    ANIMATIONS
