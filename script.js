@@ -131,4 +131,93 @@
 
     animId = requestAnimationFrame(step);
   });
+
+  // Consultation popup
+  var POPUP_KEY = 'sagherji_consult_dismissed';
+  var POPUP_DELAY = 2500;
+
+  function createConsultPopup() {
+    if (document.getElementById('consultOverlay')) return document.getElementById('consultOverlay');
+    var overlay = document.createElement('div');
+    overlay.id = 'consultOverlay';
+    overlay.className = 'consult-overlay';
+    overlay.innerHTML = '<div class="consult-modal" role="dialog" aria-modal="true" aria-labelledby="consultTitle">'
+      + '<div class="consult-header">'
+      + '<h2 id="consultTitle" class="consult-title">Get a Free Automation Consultation</h2>'
+      + '<button class="consult-close" aria-label="Close popup"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>'
+      + '</div>'
+      + '<div class="consult-body">'
+      + '<form class="consult-form" id="consultForm" novalidate>'
+      + '<div class="consult-field"><label class="consult-label">Name</label><input type="text" name="name" class="consult-input" placeholder="John Doe" required /></div>'
+      + '<div class="consult-field"><label class="consult-label">Email</label><input type="email" name="email" class="consult-input" placeholder="john@example.com" required /></div>'
+      + '<div class="consult-field"><label class="consult-label">Phone</label><input type="tel" name="phone" class="consult-input" placeholder="+971 50 123 4567" required /></div>'
+      + '<div class="consult-field"><label class="consult-label">Property Type</label><div class="consult-radio-group"><label class="consult-radio"><input type="radio" name="propertyType" value="Home" checked /> Home</label><label class="consult-radio"><input type="radio" name="propertyType" value="Office" /> Office</label></div></div>'
+      + '<div class="consult-field consult-field-full"><label class="consult-label">Message</label><textarea name="message" class="consult-input consult-textarea" rows="4" placeholder="Tell us about your project..."></textarea></div>'
+      + '<button type="submit" class="consult-submit">Request Consultation</button>'
+      + '<p class="consult-note">We respect your privacy. No spam, ever.</p>'
+      + '</form>'
+      + '</div></div>';
+    document.body.appendChild(overlay);
+    return overlay;
+  }
+
+  var consultOverlay = createConsultPopup();
+  var consultForm = document.getElementById('consultForm');
+
+  function openConsult() {
+    consultOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeConsult(persist) {
+    consultOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+    if (persist) {
+      try { sessionStorage.setItem(POPUP_KEY, '1'); } catch (e) {}
+    }
+  }
+
+  consultOverlay.addEventListener('click', function (e) {
+    if (e.target === consultOverlay) closeConsult(true);
+  });
+
+  consultOverlay.querySelector('.consult-close').addEventListener('click', function () { closeConsult(true); });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && consultOverlay.classList.contains('open')) closeConsult(true);
+  });
+
+  if (consultForm) {
+    consultForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!consultForm.checkValidity()) { consultForm.reportValidity(); return; }
+      var data = new FormData(consultForm);
+      var subject = encodeURIComponent('Free Automation Consultation - ' + (data.get('propertyType') || ''));
+      var body = encodeURIComponent('Name: ' + data.get('name') + '\nEmail: ' + data.get('email') + '\nPhone: ' + data.get('phone') + '\nProperty Type: ' + data.get('propertyType') + '\n\nMessage:\n' + data.get('message'));
+      window.location.href = 'mailto:info@sagherji.tech?subject=' + subject + '&body=' + body;
+      closeConsult(true);
+    });
+  }
+
+  var dismissed = false;
+  try { dismissed = sessionStorage.getItem(POPUP_KEY) === '1'; } catch (e) {}
+
+  if (!dismissed) {
+    setTimeout(openConsult, POPUP_DELAY);
+  }
+
+  document.querySelectorAll('.btn-quote, .btn-enquire, .btn-section-enquire, .btn-project, .btn-section-project').forEach(function (btn) {
+    var href = btn.getAttribute('href');
+    if (href && href.indexOf('#contact') !== -1) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        openConsult();
+      });
+    } else if (btn.classList.contains('btn-quote')) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        openConsult();
+      });
+    }
+  });
 })();

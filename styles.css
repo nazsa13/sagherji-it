@@ -1463,6 +1463,173 @@ body.menu-open {
 }
 
 /* ========================================
+   CONSULTATION POPUP
+   ======================================== */
+.consult-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(13, 35, 64, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.consult-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.consult-modal {
+  background: var(--bg-primary);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 640px;
+  max-height: 90vh;
+  overflow-y: auto;
+  transform: translateY(20px) scale(0.98);
+  transition: transform 0.3s ease;
+  border: 1px solid var(--border-light);
+}
+
+.consult-overlay.open .consult-modal {
+  transform: translateY(0) scale(1);
+}
+
+.consult-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.consult-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--baltic-blue-darker);
+}
+
+[data-theme="dark"] .consult-title { color: var(--text-primary); }
+
+.consult-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: background 0.2s, color 0.2s;
+}
+
+.consult-close:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.consult-body {
+  padding: 20px 24px 24px;
+}
+
+.consult-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .consult-form { grid-template-columns: 1fr 1fr; }
+}
+
+.consult-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.consult-field-full {
+  grid-column: 1 / -1;
+}
+
+.consult-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.consult-input {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+
+.consult-input::placeholder { color: var(--text-muted); }
+
+.consult-input:focus {
+  border-color: var(--baltic-blue);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--baltic-blue) 15%, transparent);
+}
+
+.consult-radio-group {
+  display: flex;
+  gap: 16px;
+  margin-top: 6px;
+}
+
+.consult-radio {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.consult-radio input {
+  accent-color: var(--baltic-blue);
+}
+
+.consult-textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.consult-submit {
+  grid-column: 1 / -1;
+  background: var(--baltic-blue);
+  color: var(--text-on-dark);
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  transition: background 0.2s;
+  margin-top: 4px;
+}
+
+.consult-submit:hover { background: var(--baltic-blue-dark); }
+
+.consult-note {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: -4px;
+}
+
+/* ========================================
    ANIMATIONS
    ======================================== */
 @keyframes pulse {
