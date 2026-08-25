@@ -143,15 +143,15 @@
     overlay.className = 'consult-overlay';
     overlay.innerHTML = '<div class="consult-modal" role="dialog" aria-modal="true" aria-labelledby="consultTitle">'
       + '<div class="consult-header">'
-      + '<h2 id="consultTitle" class="consult-title">Get a Free Automation Consultation</h2>'
+      + '<h2 id="consultTitle" class="consult-title">Get a Free Consultation</h2>'
       + '<button class="consult-close" aria-label="Close popup"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>'
       + '</div>'
       + '<div class="consult-body">'
       + '<form class="consult-form" id="consultForm" novalidate>'
       + '<div class="consult-field"><label class="consult-label">Name</label><input type="text" name="name" class="consult-input" placeholder="John Doe" required /></div>'
       + '<div class="consult-field"><label class="consult-label">Email</label><input type="email" name="email" class="consult-input" placeholder="john@example.com" required /></div>'
-      + '<div class="consult-field"><label class="consult-label">Phone</label><input type="tel" name="phone" class="consult-input" placeholder="+971 50 123 4567" required /></div>'
-      + '<div class="consult-field"><label class="consult-label">Property Type</label><div class="consult-radio-group"><label class="consult-radio"><input type="radio" name="propertyType" value="Home" checked /> Home</label><label class="consult-radio"><input type="radio" name="propertyType" value="Office" /> Office</label></div></div>'
+      + '<div class="consult-field"><label class="consult-label">Phone</label><input type="tel" name="phone" class="consult-input" placeholder="+963 900 000 000" required /></div>'
+      + '<div class="consult-field"><label class="consult-label">Property Type</label><div class="consult-radio-group"><label class="consult-radio"><input type="radio" name="propertyType" value="Personal" checked /> Personal</label><label class="consult-radio"><input type="radio" name="propertyType" value="Business" /> Business</label></div></div>'
       + '<div class="consult-field consult-field-full"><label class="consult-label">Message</label><textarea name="message" class="consult-input consult-textarea" rows="4" placeholder="Tell us about your project..."></textarea></div>'
       + '<button type="submit" class="consult-submit">Request Consultation</button>'
       + '<p class="consult-note">We respect your privacy. No spam, ever.</p>'
@@ -192,7 +192,7 @@
       e.preventDefault();
       if (!consultForm.checkValidity()) { consultForm.reportValidity(); return; }
       var data = new FormData(consultForm);
-      var subject = encodeURIComponent('Free Automation Consultation - ' + (data.get('propertyType') || ''));
+      var subject = encodeURIComponent('Free Consultation - ' + (data.get('propertyType') || ''));
       var body = encodeURIComponent('Name: ' + data.get('name') + '\nEmail: ' + data.get('email') + '\nPhone: ' + data.get('phone') + '\nProperty Type: ' + data.get('propertyType') + '\n\nMessage:\n' + data.get('message'));
       window.location.href = 'mailto:info@sagherji.tech?subject=' + subject + '&body=' + body;
       closeConsult(true);
