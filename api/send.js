@@ -19,12 +19,14 @@ export default async function handler(req, res) {
 
   const host = process.env.ZOHO_HOST || 'smtp.zoho.com';
   const port = parseInt(process.env.ZOHO_PORT || '465', 10);
-  const user = process.env.ZOHO_USER;
+  const user = process.env.ZOHO_USER || 'nazir@sagherji.com';
   const pass = process.env.ZOHO_PASS;
-  const to = process.env.TO_EMAIL || user || 'info@sagherji.com';
+  const fromEmail = process.env.FROM_EMAIL || 'w.contact@sagherji.com';
+  const fromName = process.env.FROM_NAME || 'Website Contacting System';
+  const to = process.env.TO_EMAIL || 'info@sagherji.com';
 
   if (!user || !pass) {
-    return res.status(500).json({ error: 'Email not configured. Set ZOHO_USER and ZOHO_PASS env vars in Vercel.' });
+    return res.status(500).json({ error: 'Email not configured. Set ZOHO_USER (nazir@sagherji.com) and ZOHO_PASS (App Password) env vars in Vercel.' });
   }
 
   const isConsultation = formType === 'consultation' || propertyType !== undefined;
@@ -61,7 +63,7 @@ export default async function handler(req, res) {
     });
 
     await transporter.sendMail({
-      from: `"Sagherji Website" <${user}>`,
+      from: `"${fromName}" <${fromEmail}>`,
       to,
       replyTo: `"${name}" <${email}>`,
       subject,
