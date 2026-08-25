@@ -168,10 +168,29 @@
           </div>
           <div class="contact-form-wrap">
             <form class="contact-form">
-              <div class="form-field"><label class="form-label">Full Name</label><input type="text" class="form-input" placeholder="John Doe" /></div>
-              <div class="form-field"><label class="form-label">Email Address</label><input type="email" class="form-input" placeholder="john@example.com" /></div>
-              <div class="form-field form-field-full"><label class="form-label">Interest</label><input type="text" class="form-input" placeholder="e.g. Solar Energy, CCTV..." /></div>
-              <div class="form-field form-field-full"><label class="form-label">Message</label><textarea class="form-input form-textarea" rows="4" placeholder="Tell us about your project..."></textarea></div>
+              <div class="form-field">
+                <label class="form-label">Name</label>
+                <input type="text" name="name" class="form-input" placeholder="John Doe" required />
+              </div>
+              <div class="form-field">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" class="form-input" placeholder="john@example.com" required />
+              </div>
+              <div class="form-field">
+                <label class="form-label">Phone</label>
+                <input type="tel" name="phone" class="form-input" placeholder="+963 900 000 000" required />
+              </div>
+              <div class="form-field">
+                <label class="form-label">Property Type</label>
+                <div style="display:flex;gap:16px;margin-top:10px">
+                  <label style="display:flex;align-items:center;gap:6px;font-size:14px;color:var(--text-secondary);cursor:pointer"><input type="radio" name="propertyType" value="Personal" checked style="accent-color:var(--baltic-blue)" /> Personal</label>
+                  <label style="display:flex;align-items:center;gap:6px;font-size:14px;color:var(--text-secondary);cursor:pointer"><input type="radio" name="propertyType" value="Business" style="accent-color:var(--baltic-blue)" /> Business</label>
+                </div>
+              </div>
+              <div class="form-field form-field-full">
+                <label class="form-label">Message</label>
+                <textarea name="message" class="form-input form-textarea" rows="4" placeholder="Tell us about your project..."></textarea>
+              </div>
               <button type="submit" class="btn-submit">Send Message</button>
             </form>
           </div>
@@ -218,6 +237,6 @@
       </div>
     </footer>
   </div>
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>

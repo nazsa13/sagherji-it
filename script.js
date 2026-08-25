@@ -291,13 +291,15 @@
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var inputs = form.querySelectorAll('input, textarea, select');
-      var nameVal = (inputs[0] && inputs[0].value.trim()) || '';
-      var emailVal = (inputs[1] && inputs[1].value.trim()) || '';
-      var interestVal = (inputs[2] && inputs[2].value.trim()) || '';
-      var messageVal = (form.querySelector('textarea') && form.querySelector('textarea').value.trim()) || '';
-      if (!nameVal || !emailVal || !messageVal) {
-        errorEl.textContent = 'Please fill in Name, Email and Message.';
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      var fd = new FormData(form);
+      var nameVal = (fd.get('name') || '').trim();
+      var emailVal = (fd.get('email') || '').trim();
+      var phoneVal = (fd.get('phone') || '').trim();
+      var propertyTypeVal = fd.get('propertyType') || 'Personal';
+      var messageVal = (fd.get('message') || '').trim();
+      if (!nameVal || !emailVal || !phoneVal || !messageVal) {
+        errorEl.textContent = 'Please fill in all fields.';
         errorEl.classList.add('show');
         successEl.classList.remove('show');
         return;
@@ -316,7 +318,8 @@
       var payload = {
         name: nameVal,
         email: emailVal,
-        interest: interestVal,
+        phone: phoneVal,
+        propertyType: propertyTypeVal,
         message: messageVal,
         formType: 'contact'
       };
