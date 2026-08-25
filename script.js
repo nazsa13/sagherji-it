@@ -239,7 +239,7 @@
       btn.textContent = 'Sending...';
       consultSuccess.classList.remove('show');
       consultError.classList.remove('show');
-      submitToFormSubmit(payload, 'https://formsubmit.co/ajax/info@sagherji.tech')
+      submitToFormSubmit(payload, 'https://formsubmit.co/ajax/info@sagherji.com')
         .then(function () {
           consultSuccess.classList.add('show');
           showToast('Consultation request sent!', 'success');
@@ -247,7 +247,7 @@
           setTimeout(function () { closeConsult(true); consultSuccess.classList.remove('show'); }, 2500);
         })
         .catch(function () {
-          consultError.textContent = 'Failed to send. Please try again or email info@sagherji.tech';
+          consultError.textContent = 'Failed to send. Please try again or email info@sagherji.com';
           consultError.classList.add('show');
           showToast('Failed to send. Please try again.', 'error');
         })
@@ -325,7 +325,7 @@
         _template: 'table'
       };
 
-      submitToFormSubmit(payload, 'https://formsubmit.co/ajax/info@sagherji.tech')
+      submitToFormSubmit(payload, 'https://formsubmit.co/ajax/info@sagherji.com')
         .then(function () {
           successEl.classList.add('show');
           showToast('Message sent successfully!', 'success');
@@ -333,7 +333,7 @@
           setTimeout(function () { successEl.classList.remove('show'); }, 5000);
         })
         .catch(function () {
-          errorEl.textContent = 'Failed to send. Please email directly to info@sagherji.tech';
+          errorEl.textContent = 'Failed to send. Please email directly to info@sagherji.com';
           errorEl.classList.add('show');
           showToast('Failed to send. Please try again.', 'error');
         })
@@ -358,7 +358,7 @@
       btn.disabled = true;
       var orig = btn.textContent;
       btn.textContent = '...';
-      submitToFormSubmit({ email: email, _subject: 'New Newsletter Subscription', _captcha: 'false' }, 'https://formsubmit.co/ajax/info@sagherji.tech')
+      submitToFormSubmit({ email: email, _subject: 'New Newsletter Subscription', _captcha: 'false' }, 'https://formsubmit.co/ajax/info@sagherji.com')
         .then(function () {
           showToast('Subscribed! Thank you.', 'success');
           input.value = '';
