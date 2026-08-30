@@ -1741,31 +1741,7 @@ body.menu-open {
   border-color: var(--baltic-blue);
 }
 
-html[dir="rtl"] body {
-  direction: rtl;
-}
 
-html[dir="rtl"] .nav-links {
-  flex-direction: row-reverse;
-}
-
-html[dir="rtl"] .hero-text,
-html[dir="rtl"] .features-text,
-html[dir="rtl"] .about-text,
-html[dir="rtl"] .contact-info {
-  text-align: right;
-}
-
-html[dir="rtl"] .features-list-item,
-html[dir="rtl"] .about-value,
-html[dir="rtl"] .contact-detail {
-  flex-direction: row-reverse;
-}
-
-html[dir="rtl"] .service-link svg,
-html[dir="rtl"] .icon-arrow {
-  transform: scaleX(-1);
-}
 
 /* ========================================
    ANIMATIONS

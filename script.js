@@ -189,6 +189,10 @@
     var dict = I18N[lang] || I18N.ar;
     htmlEl.setAttribute('lang', lang);
     htmlEl.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    document.querySelectorAll('.nav-logo').forEach(function (img) {
+      img.src = lang === 'ar' ? 'Sagherji%20Integrated%20Technologies%20-%20%20Ar.png' : 'Sagherji%20Integrated%20Technologies.png';
+      img.alt = lang === 'ar' ? 'شعار ساغرجي للتقنيات المتكاملة' : 'Sagherji Integrated Technologies Logo';
+    });
     localStorage.setItem('lang', lang);
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       var key = el.getAttribute('data-i18n');
