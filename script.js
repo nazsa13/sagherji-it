@@ -358,7 +358,7 @@
   function setLang(lang) {
     var dict = I18N[lang] || I18N.ar;
     htmlEl.setAttribute('lang', lang);
-    htmlEl.setAttribute('dir', 'ltr');
+    htmlEl.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
     requestAnimationFrame(function () {
       document.querySelectorAll('.nav-logo').forEach(function (img) {
         img.src = lang === 'ar' ? 'Sagherji-Ar.png' : 'Sagherji%20Integrated%20Technologies.png';
