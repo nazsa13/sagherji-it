@@ -142,7 +142,7 @@
     ar: {
       nav_home: 'الرئيسية', nav_services: 'الخدمات', nav_projects: 'المشاريع', nav_about: 'من نحن', nav_contact: 'تواصل معنا', nav_quote: 'احصل على عرض',
       hero_badge: 'حلول تقنية للجيل القادم',
-      hero_title_securing: 'نؤمّن اليوم،', hero_title_powering: 'نُشغّل الغد',
+      hero_title_securing: 'تأمين الحاضر،', hero_title_powering: 'تمكين المستقبل',
       hero_desc: 'نقدّم حلولاً تقنية ذكية ومتكاملة لاحتياجات الأمن الحديث والطاقة والاتصالات. نُحوّل طريقة عيشك وعملك.',
       hero_explore: 'استكشف خدماتنا', hero_learn: 'اعرف المزيد', hero_projects: 'عرض مشاريعنا', hero_enquire: 'استفسر الآن',
       stats_projects: 'مشاريع ناجحة', stats_engineers: 'مهندس خبير', stats_years: 'سنة خبرة',
