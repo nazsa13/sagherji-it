@@ -248,7 +248,7 @@
       features_li4: 'إدارة سحابية لجميع أنظمة الأمان',
       features_float_title: 'تركيب سريع', features_float_sub: 'خلال 48 ساعة',
       about_label: 'من نحن', about_title: 'موثوقون منذ 1994',
-      about_p1: 'ساغرجي للتقنيات المتكاملة مزوّد رائد لحلول الأمن الذكي والطاقة والاتصالات والإضاءة والمنزل الذكي في سوريا والشرق الأوسط. نجمع عقوداً من الخبرة الهندسية مع أحدث التقنيات لتقديم أنظمة موثوقة وقابلة للتوسع وجاهزة للمستقبل.',
+      about_p1: 'صاغرجي للتقنيات المتكاملة مزوّد رائد لحلول الأمن الذكي والطاقة والاتصالات والإضاءة والمنزل الذكي في سوريا والشرق الأوسط. نجمع عقوداً من الخبرة الهندسية مع أحدث التقنيات لتقديم أنظمة موثوقة وقابلة للتوسع وجاهزة للمستقبل.',
       about_p2: 'من التحكم البيومتري والمراقبة بدقة 4K إلى الطاقة الشمسية ومنصات الاتصالات الموحّدة، كل حل ننفّذه مصمّم لاحتياجات عملائنا — سكني أو تجاري أو حكومي.',
       val_reliability: 'الموثوقية', val_reliability_desc: 'كل نظام مدعوم بدعم 24/7 وصيانة مدى الحياة.',
       val_innovation: 'الابتكار', val_innovation_desc: 'نتبنى باستمرار أحدث التقنيات لنبقى في المقدمة.',
@@ -256,14 +256,14 @@
       stats_delivered: 'مشاريع منجزة', stats_engineers2: 'مهندس خبير', stats_years2: 'سنة خبرة', stats_satisfaction: 'رضا العملاء',
       contact_title: 'لنؤمّن مشروعك', contact_title2: 'معاً',
       contact_desc: 'لديك سؤال أو جاهز للبدء؟ فريقنا مستعد لتقديم استشارة خبيرة.',
-      contact_hq: 'مقرنا', contact_hq_val: 'شارع الميسلون<br/>دمشق - سوريا',
+      contact_hq: 'مقرنا', contact_hq_val: 'شارع ميسلون<br/>دمشق، سوريا',
       contact_call: 'اتصل بنا', contact_email: 'الدعم عبر البريد',
       form_name: 'الاسم', form_email: 'البريد الإلكتروني', form_phone: 'الهاتف', form_property: 'نوع العقار', form_personal: 'شخصي', form_business: 'تجاري', form_message: 'الرسالة', form_send: 'إرسال الرسالة', form_msg_ph: 'أخبرنا عن مشروعك...',
       consult_title: 'احصل على استشارة مجانية', consult_name: 'الاسم', consult_email: 'البريد الإلكتروني', consult_phone: 'الهاتف', consult_property: 'نوع العقار', consult_msg: 'الرسالة', consult_submit: 'طلب استشارة', consult_note: 'نحترم خصوصيتك. لا رسائل مزعجة.',
       footer_desc: 'مزود رائد لحلول الأمن المتكامل والتقنيات الذكية. نحمي ما يهمك أكثر.',
       footer_solutions: 'الحلول', footer_company: 'الشركة', footer_about: 'من نحن', footer_portfolio: 'محفظتنا', footer_careers: 'الوظائف',
       footer_newsletter: 'النشرة البريدية', footer_newsletter_desc: 'ابق على اطلاع بآخر الأخبار التقنية.', footer_enter_email: 'أدخل البريد', footer_join: 'انضمام',
-      footer_copy: 'ساغرجي للتقنيات المتكاملة. جميع الحقوق محفوظة.',
+      footer_copy: 'صاغرجي للتقنيات المتكاملة. جميع الحقوق محفوظة.',
       partners_title: 'شركاؤنا', clients_title: 'عملاؤنا', and_more: 'والمزيد...',
       projects_title: 'مشاريعنا', projects_sub: 'استكشف محفظتنا من حلول الأمن والطاقة والاتصالات المتكاملة.', projects_soon: 'قريباً', projects_soon_p: 'نبني صفحة مخصصة لكل فئة مشاريع. عُد قريباً!',
       page_title_security: 'أنظمة الأمان',
@@ -362,7 +362,7 @@
     requestAnimationFrame(function () {
       document.querySelectorAll('.nav-logo').forEach(function (img) {
         img.src = lang === 'ar' ? 'Sagherji-Ar.png' : 'Sagherji%20Integrated%20Technologies.png';
-        img.alt = lang === 'ar' ? 'شعار ساغرجي للتقنيات المتكاملة' : 'Sagherji Integrated Technologies Logo';
+        img.alt = lang === 'ar' ? 'شعار صاغرجي للتقنيات المتكاملة' : 'Sagherji Integrated Technologies Logo';
       });
     });
     localStorage.setItem('lang', lang);
