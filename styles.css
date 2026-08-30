@@ -1754,8 +1754,21 @@ html[dir="rtl"] .contact-info {
 
 html[dir="rtl"] .features-list-item,
 html[dir="rtl"] .about-value,
-html[dir="rtl"] .contact-detail {
+html[dir="rtl"] .contact-detail,
+html[dir="rtl"] .feature-item,
+html[dir="rtl"] .features-list,
+html[dir="rtl"] .feature-list {
   flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .features-bg-pattern {
+  left: auto;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
+html[dir="rtl"] .pattern-svg {
+  transform: scaleX(-1);
 }
 
 html[dir="rtl"] .service-link svg,
