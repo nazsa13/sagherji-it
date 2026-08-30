@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,16 +30,17 @@
         </button>
 
         <div class="nav-links">
-          <a href="#home" class="nav-link">Home</a>
-          <a href="#services" class="nav-link">Services</a>
-          <a href="projects.html" class="nav-link">Projects</a>
-          <a href="#about" class="nav-link">About</a>
-          <a href="#contact" class="nav-link">Contact</a>
-          <button class="btn-quote">Get Quote</button>
+          <a href="#home" class="nav-link" data-i18n="nav_home">Home</a>
+          <a href="#services" class="nav-link" data-i18n="nav_services">Services</a>
+          <a href="projects.html" class="nav-link" data-i18n="nav_projects">Projects</a>
+          <a href="#about" class="nav-link" data-i18n="nav_about">About</a>
+          <a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a>
+          <button class="btn-quote" data-i18n="nav_quote">Get Quote</button>
           <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
             <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
             <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
           </button>
+          <button id="lang-toggle" class="lang-toggle" aria-label="Switch language">En</button>
         </div>
 
         <div id="mobile-menu" class="mobile-menu">
@@ -54,6 +55,7 @@
             <svg class="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
             <span>Toggle Theme</span>
           </button>
+          <button id="lang-toggle-mobile" class="lang-toggle" aria-label="Switch language" style="width:100%;margin-top:8px">En</button>
         </div>
       </div>
     </nav>
@@ -76,16 +78,16 @@
       </div>
       <div class="hero-content">
         <div class="hero-text">
-          <span class="hero-badge">Next-Gen Tech Solutions</span>
-          <h1 class="hero-title"><span class="text-orange-500">Securing Today,</span> <span class="text-blue-400">Powering Tomorrow</span></h1>
-          <p class="hero-desc">We provide smart, integrated technological solutions for modern security, energy, and communication needs. Transforming the way you live and work.</p>
+          <span class="hero-badge" data-i18n="hero_badge">Next-Gen Tech Solutions</span>
+          <h1 class="hero-title"><span class="text-orange-500" data-i18n="hero_title_securing">Securing Today,</span> <span class="text-blue-400" data-i18n="hero_title_powering">Powering Tomorrow</span></h1>
+          <p class="hero-desc" data-i18n="hero_desc">We provide smart, integrated technological solutions for modern security, energy, and communication needs. Transforming the way you live and work.</p>
           <div class="hero-buttons">
-            <a href="#services" class="btn-primary">Explore Our Services
+            <a href="#services" class="btn-primary" data-i18n="hero_explore">Explore Our Services
               <svg xmlns="http://www.w3.org/2000/svg" class="icon-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
-            <a href="#about" class="btn-secondary">Learn More</a>
-            <a href="projects.html" class="btn-project">View Our Projects</a>
-            <a href="#contact" class="btn-enquire">Enquire Now</a>
+            <a href="#about" class="btn-secondary" data-i18n="hero_learn" data-i18n="learn_more">Learn More</a>
+            <a href="projects.html" class="btn-project" data-i18n="hero_projects">View Our Projects</a>
+            <a href="#contact" class="btn-enquire" data-i18n="hero_enquire">Enquire Now</a>
           </div>
         </div>
       </div>
@@ -96,11 +98,11 @@
     <div class="stats-bar">
       <div class="stat-item">
         <div class="stat-val">500+</div>
-        <div class="stat-label">Successful Projects</div>
+        <div class="stat-label" data-i18n="stats_projects">Successful Projects</div>
       </div>
       <div class="stat-item">
         <div class="stat-val">50+</div>
-        <div class="stat-label">Expert Engineers</div>
+        <div class="stat-label" data-i18n="stats_engineers">Expert Engineers</div>
       </div>
       <div class="stat-item">
         <div class="stat-val">30+</div>
@@ -112,8 +114,8 @@
     <section id="services" class="services">
       <div class="section-container">
         <div class="section-header">
-          <h2 class="section-label">What We Do</h2>
-          <h3 class="section-title">Our Specialized Solutions</h3>
+          <h2 class="section-label" data-i18n="services_label">What We Do</h2>
+          <h3 class="section-title" data-i18n="services_title">Our Specialized Solutions</h3>
           <div class="section-divider"></div>
         </div>
 
@@ -128,9 +130,9 @@
               </div>
             </div>
             <div class="service-body">
-              <h4 class="service-title">Security Systems</h4>
-              <p class="service-desc">Advanced intrusion detection, motion sensors, and crystal-clear 4K video surveillance with remote monitoring for complete protection.</p>
-              <a href="service-cctv.html" class="service-link">Learn More
+              <h4 class="service-title" data-i18n="svc_security_title">Security Systems</h4>
+              <p class="service-desc" data-i18n="svc_security_desc">Advanced intrusion detection, motion sensors, and crystal-clear 4K video surveillance with remote monitoring for complete protection.</p>
+              <a href="service-cctv.html" class="service-link" data-i18n="learn_more">Learn More
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
               </a>
             </div>
@@ -145,9 +147,9 @@
               </div>
             </div>
             <div class="service-body">
-              <h4 class="service-title">Lighting Solutions</h4>
-              <p class="service-desc">Design &amp; Supply energy-efficient LED systems with intelligent controls for residential, commercial, and industrial spaces.</p>
-              <a href="service-lighting.html" class="service-link">Learn More
+              <h4 class="service-title" data-i18n="svc_lighting_title">Lighting Solutions</h4>
+              <p class="service-desc" data-i18n="svc_lighting_desc">Design &amp; Supply energy-efficient LED systems with intelligent controls for residential, commercial, and industrial spaces.</p>
+              <a href="service-lighting.html" class="service-link" data-i18n="learn_more">Learn More
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
               </a>
             </div>
@@ -162,9 +164,9 @@
               </div>
             </div>
             <div class="service-body">
-              <h4 class="service-title">Telecom &amp; Networking Solutions</h4>
-              <p class="service-desc">End-to-end network infrastructure including IP telephony, routers, switches, and wireless backhaul — from copper to fibre to lightbeam.</p>
-              <a href="service-telecom.html" class="service-link">Learn More
+              <h4 class="service-title" data-i18n="svc_telecom_title">Telecom &amp; Networking Solutions</h4>
+              <p class="service-desc" data-i18n="svc_telecom_desc">End-to-end network infrastructure including IP telephony, routers, switches, and wireless backhaul — from copper to fibre to lightbeam.</p>
+              <a href="service-telecom.html" class="service-link" data-i18n="learn_more">Learn More
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
               </a>
             </div>
@@ -179,9 +181,9 @@
               </div>
             </div>
             <div class="service-body">
-              <h4 class="service-title">Access Control &amp; Time Attendance</h4>
-              <p class="service-desc">Comprehensive entry management with biometric readers, smart cards, PIN pads, and integrated time & attendance tracking with automated salary calculation.</p>
-              <a href="service-biometric.html" class="service-link">Learn More
+              <h4 class="service-title" data-i18n="svc_access_title">Access Control &amp; Time Attendance</h4>
+              <p class="service-desc" data-i18n="svc_access_desc">Comprehensive entry management with biometric readers, smart cards, PIN pads, and integrated time & attendance tracking with automated salary calculation.</p>
+              <a href="service-biometric.html" class="service-link" data-i18n="learn_more">Learn More
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
               </a>
             </div>
@@ -196,9 +198,9 @@
               </div>
             </div>
             <div class="service-body">
-              <h4 class="service-title">Automation &amp; Control Systems</h4>
-              <p class="service-desc">Integrated building automation for smart control of lighting, HVAC, shading, and energy management through a single platform.</p>
-              <a href="service-automation.html" class="service-link">Learn More
+              <h4 class="service-title" data-i18n="svc_auto_title">Automation &amp; Control Systems</h4>
+              <p class="service-desc" data-i18n="svc_auto_desc">Integrated building automation for smart control of lighting, HVAC, shading, and energy management through a single platform.</p>
+              <a href="service-automation.html" class="service-link" data-i18n="learn_more">Learn More
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
               </a>
             </div>
@@ -213,9 +215,9 @@
               </div>
             </div>
             <div class="service-body">
-              <h4 class="service-title">Solar Energy Solutions</h4>
-              <p class="service-desc">Harness the power of the sun with our high-efficiency PV panels and smart energy storage systems.</p>
-              <a href="service-solar.html" class="service-link">Learn More
+              <h4 class="service-title" data-i18n="svc_solar_title">Solar Energy Solutions</h4>
+              <p class="service-desc" data-i18n="svc_solar_desc">Harness the power of the sun with our high-efficiency PV panels and smart energy storage systems.</p>
+              <a href="service-solar.html" class="service-link" data-i18n="learn_more">Learn More
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
               </a>
             </div>
@@ -228,8 +230,8 @@
     <!-- Section Buttons: Services -->
     <div class="section-container" style="text-align:center;padding-bottom:64px">
       <div class="btn-pair-row">
-        <a href="projects.html" class="btn-section-project">View Our Projects</a>
-        <a href="#contact" class="btn-section-enquire">Enquire Now</a>
+        <a href="projects.html" class="btn-section-project" data-i18n="btn_view_projects">View Our Projects</a>
+        <a href="#contact" class="btn-section-enquire" data-i18n="btn_enquire_now">Enquire Now</a>
       </div>
     </div>
 
@@ -237,32 +239,32 @@
     <section class="features">
       <div class="features-container">
         <div class="features-text">
-          <h2 class="features-title">Building the Future of <br/><span class="text-orange-400">Integrated Security</span></h2>
-          <p class="features-desc">We are currently expanding our digital presence to serve you better. Our new platform will feature a full product catalog, online technical support, and real-time project tracking.</p>
+          <h2 class="features-title">Building the Future of <br/><span class="text-orange-400" data-i18n="features_title_hl">Integrated Security</span></h2>
+          <p class="features-desc" data-i18n="features_desc">We are currently expanding our digital presence to serve you better. Our new platform will feature a full product catalog, online technical support, and real-time project tracking.</p>
           <ul class="features-list">
             <li class="features-list-item">
               <span class="features-check">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
               </span>
-              <span>Comprehensive site surveys and needs assessment</span>
+              <span data-i18n="features_li1">Comprehensive site surveys and needs assessment</span>
             </li>
             <li class="features-list-item">
               <span class="features-check">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
               </span>
-              <span>Professional installation by certified technicians</span>
+              <span data-i18n="features_li2">Professional installation by certified technicians</span>
             </li>
             <li class="features-list-item">
               <span class="features-check">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
               </span>
-              <span>Lifetime maintenance and 24/7 technical support</span>
+              <span data-i18n="features_li3">Lifetime maintenance and 24/7 technical support</span>
             </li>
             <li class="features-list-item">
               <span class="features-check">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
               </span>
-              <span>Cloud-based management for all security systems</span>
+              <span data-i18n="features_li4">Cloud-based management for all security systems</span>
             </li>
           </ul>
 
@@ -272,8 +274,8 @@
             <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800" alt="Installation" />
             <div class="features-float">
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              <div class="float-bold">Fast Installation</div>
-              <div class="float-sub">Within 48 Hours</div>
+              <div class="float-bold" data-i18n="features_float_title">Fast Installation</div>
+              <div class="float-sub" data-i18n="features_float_sub">Within 48 Hours</div>
             </div>
           </div>
           <div class="features-bg-pattern">
@@ -290,8 +292,8 @@
     <!-- Section Buttons: Features -->
     <div class="section-container" style="text-align:center;padding:64px 16px">
       <div class="btn-pair-row">
-        <a href="projects.html" class="btn-section-project">View Our Projects</a>
-        <a href="#contact" class="btn-section-enquire">Enquire Now</a>
+        <a href="projects.html" class="btn-section-project" data-i18n="btn_view_projects">View Our Projects</a>
+        <a href="#contact" class="btn-section-enquire" data-i18n="btn_enquire_now">Enquire Now</a>
       </div>
     </div>
 
@@ -299,8 +301,8 @@
     <section id="about" class="about">
       <div class="section-container">
         <div class="section-header">
-          <h2 class="section-label">Who We Are</h2>
-          <h3 class="section-title">Trusted Since 1994</h3>
+          <h2 class="section-label" data-i18n="about_label">Who We Are</h2>
+          <h3 class="section-title" data-i18n="about_title">Trusted Since 1994</h3>
           <div class="section-divider"></div>
         </div>
         <div class="about-grid">
@@ -445,7 +447,7 @@
           </div>
 
                     <div class="footer-col">
-            <h5 class="footer-col-title">Solutions</h5>
+            <h5 class="footer-col-title" data-i18n="footer_solutions">Solutions</h5>
             <ul class="footer-links">
               <li><a href="service-cctv.html">Security Systems</a></li>
               <li><a href="service-lighting.html">Lighting Solutions</a></li>
@@ -457,7 +459,7 @@
           </div>
 
                     <div class="footer-col">
-            <h5 class="footer-col-title">Company</h5>
+            <h5 class="footer-col-title" data-i18n="footer_company">Company</h5>
             <ul class="footer-links">
               <li><a href="#about">About Us</a></li>
               <li><a href="projects.html">Our Portfolio</a></li>
@@ -466,7 +468,7 @@
           </div>
 
           <div class="footer-col">
-            <h5 class="footer-col-title">Newsletter</h5>
+            <h5 class="footer-col-title" data-i18n="footer_newsletter">Newsletter</h5>
             <p class="footer-newsletter-desc">Stay updated with the latest tech news.</p>
             <div class="footer-newsletter">
               <input type="email" class="newsletter-input" placeholder="Enter email" />

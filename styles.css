@@ -1718,6 +1718,55 @@ body.menu-open {
 .toast.success { background: #065f46; }
 .toast.error { background: #991b1b; }
 
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lang-toggle:hover {
+  background: var(--baltic-blue);
+  color: var(--text-on-dark);
+  border-color: var(--baltic-blue);
+}
+
+html[dir="rtl"] body {
+  direction: rtl;
+}
+
+html[dir="rtl"] .nav-links {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .hero-text,
+html[dir="rtl"] .features-text,
+html[dir="rtl"] .about-text,
+html[dir="rtl"] .contact-info {
+  text-align: right;
+}
+
+html[dir="rtl"] .features-list-item,
+html[dir="rtl"] .about-value,
+html[dir="rtl"] .contact-detail {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .service-link svg,
+html[dir="rtl"] .icon-arrow {
+  transform: scaleX(-1);
+}
+
 /* ========================================
    ANIMATIONS
    ======================================== */
