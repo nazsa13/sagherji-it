@@ -399,10 +399,10 @@
     var isArabic = lang === 'ar';
     document.querySelectorAll('.features-list-item, .feature-item').forEach(function (item) {
       if (isArabic) {
-        item.style.direction = 'rtl';
+        item.style.flexDirection = 'row-reverse';
         item.style.textAlign = 'right';
       } else {
-        item.style.direction = '';
+        item.style.flexDirection = '';
         item.style.textAlign = '';
       }
     });

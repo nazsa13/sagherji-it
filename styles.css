@@ -1755,11 +1755,16 @@ html[dir="rtl"] .contact-info {
 html[dir="rtl"] .feature-list {
   direction: rtl;
 }
+
+html[dir="rtl"] .features-list {
+  direction: rtl;
+}
+
+html[dir="rtl"] .features-list-item,
 html[dir="rtl"] .about-value,
 html[dir="rtl"] .contact-detail,
 html[dir="rtl"] .feature-item {
-  flex-direction: row;
-  direction: rtl;
+  flex-direction: row-reverse !important;
   text-align: right;
 }
 
