@@ -1759,6 +1759,14 @@ html[dir="rtl"] .feature-item {
   flex-direction: row-reverse !important;
   direction: rtl;
   text-align: right;
+  justify-content: flex-end !important;
+}
+
+html[dir="rtl"] .features-check,
+html[dir="rtl"] .feature-icon {
+  order: 2 !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
 }
 
 html[dir="rtl"] .feature-label,
