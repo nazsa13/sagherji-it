@@ -399,11 +399,27 @@
     var isArabic = lang === 'ar';
     document.querySelectorAll('.features-list-item, .feature-item').forEach(function (item) {
       if (isArabic) {
-        item.style.flexDirection = 'row-reverse';
+        item.style.justifyContent = 'flex-end';
         item.style.textAlign = 'right';
       } else {
-        item.style.flexDirection = '';
+        item.style.justifyContent = '';
         item.style.textAlign = '';
+      }
+    });
+    
+    document.querySelectorAll('.features-check, .feature-icon').forEach(function (icon) {
+      if (isArabic) {
+        icon.style.order = '2';
+      } else {
+        icon.style.order = '';
+      }
+    });
+    
+    document.querySelectorAll('.features-list-item > span:last-child, .feature-item > span:last-child').forEach(function (text) {
+      if (isArabic) {
+        text.style.order = '1';
+      } else {
+        text.style.order = '';
       }
     });
   }

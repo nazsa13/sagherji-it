@@ -1764,8 +1764,19 @@ html[dir="rtl"] .features-list-item,
 html[dir="rtl"] .about-value,
 html[dir="rtl"] .contact-detail,
 html[dir="rtl"] .feature-item {
-  flex-direction: row-reverse !important;
+  justify-content: flex-end;
   text-align: right;
+}
+
+html[dir="rtl"] .features-check,
+html[dir="rtl"] .feature-icon {
+  order: 2;
+  flex-shrink: 0;
+}
+
+html[dir="rtl"] .features-list-item > span:last-child,
+html[dir="rtl"] .feature-item > span:last-child {
+  order: 1;
 }
 
 html[dir="rtl"] .feature-label,
