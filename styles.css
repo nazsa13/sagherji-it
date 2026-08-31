@@ -1756,7 +1756,8 @@ html[dir="rtl"] .features-list-item,
 html[dir="rtl"] .about-value,
 html[dir="rtl"] .contact-detail,
 html[dir="rtl"] .feature-item {
-  flex-direction: row-reverse;
+  flex-direction: row-reverse !important;
+  direction: rtl;
   text-align: right;
 }
 
