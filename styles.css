@@ -1764,7 +1764,8 @@ html[dir="rtl"] .features-list-item,
 html[dir="rtl"] .about-value,
 html[dir="rtl"] .contact-detail,
 html[dir="rtl"] .feature-item {
-  justify-content: flex-end;
+  direction: rtl;
+  justify-content: flex-start;
   text-align: right;
 }
 

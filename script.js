@@ -399,9 +399,11 @@
     var isArabic = lang === 'ar';
     document.querySelectorAll('.features-list-item, .feature-item').forEach(function (item) {
       if (isArabic) {
-        item.style.justifyContent = 'flex-end';
+        item.style.direction = 'rtl';
+        item.style.justifyContent = 'flex-start';
         item.style.textAlign = 'right';
       } else {
+        item.style.direction = '';
         item.style.justifyContent = '';
         item.style.textAlign = '';
       }
