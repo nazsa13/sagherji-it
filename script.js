@@ -394,6 +394,20 @@
     });
     var consultTitle = document.getElementById('consultTitle');
     if (consultTitle && dict.consult_title) consultTitle.textContent = dict.consult_title;
+    
+    // Enforce RTL layout for list items at DOM level
+    var isArabic = lang === 'ar';
+    document.querySelectorAll('.features-list-item, .feature-item').forEach(function (item) {
+      if (isArabic) {
+        item.style.flexDirection = 'row-reverse';
+        item.style.direction = 'rtl';
+        item.style.textAlign = 'right';
+      } else {
+        item.style.flexDirection = '';
+        item.style.direction = '';
+        item.style.textAlign = '';
+      }
+    });
   }
 
   var savedLang = localStorage.getItem('lang');
