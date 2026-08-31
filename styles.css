@@ -1757,6 +1757,20 @@ html[dir="rtl"] .about-value,
 html[dir="rtl"] .contact-detail,
 html[dir="rtl"] .feature-item {
   flex-direction: row-reverse;
+  text-align: right;
+}
+
+html[dir="rtl"] .feature-label,
+html[dir="rtl"] .detail-text,
+html[dir="rtl"] .value-desc,
+html[dir="rtl"] .value-title,
+html[dir="rtl"] .detail-heading,
+html[dir="rtl"] .features-desc,
+html[dir="rtl"] .about-paragraph,
+html[dir="rtl"] .service-desc,
+html[dir="rtl"] .contact-desc {
+  text-align: right;
+  direction: rtl;
 }
 
 html[dir="rtl"] .features-bg-pattern {
