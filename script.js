@@ -399,28 +399,11 @@
     var isArabic = lang === 'ar';
     document.querySelectorAll('.features-list-item, .feature-item').forEach(function (item) {
       if (isArabic) {
-        item.style.flexDirection = 'row-reverse';
         item.style.direction = 'rtl';
         item.style.textAlign = 'right';
-        item.style.justifyContent = 'flex-end';
       } else {
-        item.style.flexDirection = '';
         item.style.direction = '';
         item.style.textAlign = '';
-        item.style.justifyContent = '';
-      }
-    });
-    
-    // Also handle the check/icon container to ensure proper positioning
-    document.querySelectorAll('.features-check, .feature-icon').forEach(function (icon) {
-      if (isArabic) {
-        icon.style.order = '2';
-        icon.style.marginLeft = 'auto';
-        icon.style.marginRight = '0';
-      } else {
-        icon.style.order = '';
-        icon.style.marginLeft = '';
-        icon.style.marginRight = '';
       }
     });
   }

@@ -1752,21 +1752,15 @@ html[dir="rtl"] .contact-info {
   text-align: right;
 }
 
-html[dir="rtl"] .features-list-item,
+html[dir="rtl"] .feature-list {
+  direction: rtl;
+}
 html[dir="rtl"] .about-value,
 html[dir="rtl"] .contact-detail,
 html[dir="rtl"] .feature-item {
-  flex-direction: row-reverse !important;
+  flex-direction: row;
   direction: rtl;
   text-align: right;
-  justify-content: flex-end !important;
-}
-
-html[dir="rtl"] .features-check,
-html[dir="rtl"] .feature-icon {
-  order: 2 !important;
-  margin-left: auto !important;
-  margin-right: 0 !important;
 }
 
 html[dir="rtl"] .feature-label,
