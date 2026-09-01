@@ -256,7 +256,7 @@
       stats_delivered: 'مشاريع منجزة', stats_engineers2: 'مهندس خبير', stats_years2: 'سنة خبرة', stats_satisfaction: 'رضا العملاء',
       contact_title: 'لنؤمّن مشروعك', contact_title2: 'معاً',
       contact_desc: 'لديك سؤال أو جاهز للبدء؟ فريقنا مستعد لتقديم استشارة خبيرة.',
-      contact_hq: 'مقرنا', contact_hq_val: 'شارع ميسلون<br/>دمشق، سوريا',
+      contact_hq: 'مقرنا', contact_hq_val: 'شارع ميسلون<br/>دمشق - سوريا',
       contact_call: 'اتصل بنا', contact_email: 'الدعم عبر البريد',
       form_name: 'الاسم', form_email: 'البريد الإلكتروني', form_phone: 'الهاتف', form_property: 'نوع العقار', form_personal: 'شخصي', form_business: 'تجاري', form_message: 'الرسالة', form_send: 'إرسال الرسالة', form_msg_ph: 'أخبرنا عن مشروعك...',
       consult_title: 'احصل على استشارة مجانية', consult_name: 'الاسم', consult_email: 'البريد الإلكتروني', consult_phone: 'الهاتف', consult_property: 'نوع العقار', consult_msg: 'الرسالة', consult_submit: 'طلب استشارة', consult_note: 'نحترم خصوصيتك. لا رسائل مزعجة.',
@@ -379,10 +379,29 @@
     var navKeys = ['nav_home','nav_services','nav_projects','nav_about','nav_contact'];
     document.querySelectorAll('.nav-link, .mobile-link').forEach(function (el, i) {
       var k = navKeys[i % navKeys.length];
-      if (dict[k] && !el.hasAttribute('data-i18n')) el.textContent = dict[k];
+      if (dict[k]) el.textContent = dict[k];
+      el.setAttribute('data-i18n', k);
     });
     document.querySelectorAll('.nav-links .btn-quote, .mobile-quote').forEach(function (el) {
-      if (!el.hasAttribute('data-i18n') && dict.nav_quote) el.textContent = dict.nav_quote;
+      if (dict.nav_quote) el.textContent = dict.nav_quote;
+      el.setAttribute('data-i18n', 'nav_quote');
+    });
+
+    document.querySelectorAll('input[name="propertyType"][value="Personal"]').forEach(function (el) {
+      var label = el.closest('label');
+      var textNode = label && label.childNodes[label.childNodes.length - 1];
+      if (label && textNode) textNode.textContent = ' ' + (dict.form_personal || 'Personal');
+    });
+    document.querySelectorAll('input[name="propertyType"][value="Business"]').forEach(function (el) {
+      var label = el.closest('label');
+      var textNode = label && label.childNodes[label.childNodes.length - 1];
+      if (label && textNode) textNode.textContent = ' ' + (dict.form_business || 'Business');
+    });
+
+    document.querySelectorAll('.contact-detail .detail-text').forEach(function (el) {
+      var parent = el.parentElement;
+      var heading = parent && parent.querySelector('.detail-label[data-i18n="contact_hq"]');
+      if (heading && dict.contact_hq_val) el.innerHTML = dict.contact_hq_val;
     });
     document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
       var key = el.getAttribute('data-i18n-placeholder');
@@ -686,4 +705,3 @@
     });
   });
 })();
-
