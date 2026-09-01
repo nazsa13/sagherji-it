@@ -411,7 +411,7 @@
     
     document.querySelectorAll('.features-check, .feature-icon').forEach(function (icon) {
       if (isArabic) {
-        icon.style.order = '2';
+        icon.style.order = '0';
       } else {
         icon.style.order = '';
       }
@@ -419,7 +419,7 @@
     
     document.querySelectorAll('.features-list-item > span:last-child, .feature-item > span:last-child').forEach(function (text) {
       if (isArabic) {
-        text.style.order = '1';
+        text.style.order = '0';
       } else {
         text.style.order = '';
       }

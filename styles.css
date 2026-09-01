@@ -1771,13 +1771,13 @@ html[dir="rtl"] .feature-item {
 
 html[dir="rtl"] .features-check,
 html[dir="rtl"] .feature-icon {
-  order: 2;
+  order: 0;
   flex-shrink: 0;
 }
 
 html[dir="rtl"] .features-list-item > span:last-child,
 html[dir="rtl"] .feature-item > span:last-child {
-  order: 1;
+  order: 0;
 }
 
 html[dir="rtl"] .feature-label,
