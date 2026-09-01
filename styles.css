@@ -1741,10 +1741,6 @@ body.menu-open {
   border-color: var(--baltic-blue);
 }
 
-html[dir="rtl"] .nav-container {
-  flex-direction: row-reverse;
-}
-
 html[dir="rtl"] .nav-links {
   flex-direction: row-reverse;
 }
