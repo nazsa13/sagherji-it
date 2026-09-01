@@ -395,35 +395,6 @@
     var consultTitle = document.getElementById('consultTitle');
     if (consultTitle && dict.consult_title) consultTitle.textContent = dict.consult_title;
     
-    // Enforce RTL layout for list items at DOM level
-    var isArabic = lang === 'ar';
-    document.querySelectorAll('.features-list-item, .feature-item').forEach(function (item) {
-      if (isArabic) {
-        item.style.direction = 'rtl';
-        item.style.justifyContent = 'flex-start';
-        item.style.textAlign = 'right';
-      } else {
-        item.style.direction = '';
-        item.style.justifyContent = '';
-        item.style.textAlign = '';
-      }
-    });
-    
-    document.querySelectorAll('.features-check, .feature-icon').forEach(function (icon) {
-      if (isArabic) {
-        icon.style.order = '0';
-      } else {
-        icon.style.order = '';
-      }
-    });
-    
-    document.querySelectorAll('.features-list-item > span:last-child, .feature-item > span:last-child').forEach(function (text) {
-      if (isArabic) {
-        text.style.order = '0';
-      } else {
-        text.style.order = '';
-      }
-    });
   }
 
   var savedLang = localStorage.getItem('lang');
@@ -715,3 +686,4 @@
     });
   });
 })();
+

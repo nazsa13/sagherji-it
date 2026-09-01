@@ -1761,23 +1761,17 @@ html[dir="rtl"] .features-list {
 }
 
 html[dir="rtl"] .features-list-item,
-html[dir="rtl"] .about-value,
-html[dir="rtl"] .contact-detail,
 html[dir="rtl"] .feature-item {
-  direction: rtl;
+  flex-direction: row;
   justify-content: flex-start;
   text-align: right;
 }
 
 html[dir="rtl"] .features-check,
 html[dir="rtl"] .feature-icon {
-  order: 0;
+  margin-left: 12px;
+  margin-right: 0;
   flex-shrink: 0;
-}
-
-html[dir="rtl"] .features-list-item > span:last-child,
-html[dir="rtl"] .feature-item > span:last-child {
-  order: 0;
 }
 
 html[dir="rtl"] .feature-label,
