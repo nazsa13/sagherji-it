@@ -376,7 +376,7 @@
         }
       }
     });
-    var navKeys = ['nav_home','nav_services','nav_projects','nav_about','nav_contact'];
+    var navKeys = ['nav_home','nav_about','nav_services','nav_projects','nav_contact'];
     document.querySelectorAll('.nav-link, .mobile-link').forEach(function (el, i) {
       var k = navKeys[i % navKeys.length];
       if (dict[k]) el.textContent = dict[k];
