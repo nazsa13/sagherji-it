@@ -136,13 +136,13 @@ input, select, textarea {
 }
 
 .nav-logo {
-  width: clamp(150px, 20vw, 220px);
-  height: auto;
-  transition: width 0.3s ease;
+  height: 48px; /* Locks the height for both languages */
+  width: auto;
+  transition: height 0.3s ease;
 }
 
 .nav.scrolled .nav-logo {
-  width: clamp(100px, 13vw, 125px);
+  height: 34px;
 }
 
 /* Desktop nav links */
@@ -440,12 +440,13 @@ body.menu-open {
     padding: 2px 0;
   }
 
-  .nav-logo {
-    width: min(80vw, 220px);
+.nav-logo {
+    height: 40px;
+    width: auto;
   }
-
+  
   .nav.scrolled .nav-logo {
-    width: min(50vw, 110px);
+    height: 30px;
   }
 
   .hero {
@@ -1739,10 +1740,6 @@ body.menu-open {
   background: var(--baltic-blue);
   color: var(--text-on-dark);
   border-color: var(--baltic-blue);
-}
-
-html[dir="rtl"] .nav-links {
-  flex-direction: row-reverse;
 }
 
 html[dir="rtl"] .hero-text,
