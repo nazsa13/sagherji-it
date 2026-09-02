@@ -178,6 +178,7 @@ input, select, textarea {
   font-weight: 700;
   transition: padding 0.3s ease, font-size 0.3s ease, background 0.2s, box-shadow 0.2s;
   box-shadow: var(--shadow-sm);
+  border: 2px solid var(--golden-orange-hover);
 }
 
 .nav.scrolled .btn-quote {
@@ -533,7 +534,7 @@ body.menu-open {
   border-radius: 8px;
   font-weight: 700;
   font-size: 16px;
-  border: 2px solid var(--baltic-blue);
+  border: 2px solid var(--baltic-blue-dark);
   transition: all 0.2s;
   display: inline-flex;
   align-items: center;
