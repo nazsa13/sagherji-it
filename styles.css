@@ -1808,6 +1808,15 @@ html[dir="rtl"] .contact-phone {
   display: inline-block;
 }
 
+/* Fix iOS Safari font fallback bug for Arabic text */
+html[dir="rtl"] .hero-badge,
+html[dir="rtl"] .section-label,
+html[dir="rtl"] .stat-label,
+html[dir="rtl"] .about-stat-label,
+html[dir="rtl"] .footer-bottom {
+  letter-spacing: normal;
+  text-transform: none;
+}
 
 
 /* ========================================
