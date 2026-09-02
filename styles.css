@@ -509,7 +509,7 @@ body.menu-open {
   border-radius: 8px;
   font-weight: 700;
   font-size: 14px;
-  border: 2px solid var(--golden-orange);
+  border: 2px solid var(--golden-orange-hover);
   transition: all 0.2s;
   display: inline-flex;
   align-items: center;
@@ -552,7 +552,7 @@ body.menu-open {
   border-radius: 8px;
   font-weight: 700;
   font-size: 16px;
-  border: 2px solid var(--golden-orange);
+  border: 2px solid var(--golden-orange-hover);
   transition: all 0.2s;
   display: inline-flex;
   align-items: center;
@@ -577,6 +577,7 @@ body.menu-open {
   gap: 6px;
   transition: all 0.2s;
   white-space: nowrap;
+  border: 2px solid var(--golden-orange-hover);
 }
 
 @media (min-width: 768px) {
@@ -601,7 +602,7 @@ body.menu-open {
   border-radius: 8px;
   font-weight: 700;
   font-size: 14px;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 2px solid rgba(255,255,255,0.3);
   transition: all 0.2s;
   white-space: nowrap;
 }
