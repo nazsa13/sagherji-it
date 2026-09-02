@@ -136,13 +136,13 @@ input, select, textarea {
 }
 
 .nav-logo {
-  height: 48px; /* Locks the height for both languages */
+  height: 70px; /* Locks the height for both languages */
   width: auto;
   transition: height 0.3s ease;
 }
 
 .nav.scrolled .nav-logo {
-  height: 34px;
+  height: 50px;
 }
 
 /* Desktop nav links */
@@ -441,12 +441,12 @@ body.menu-open {
   }
 
 .nav-logo {
-    height: 40px;
+    height: 55px;
     width: auto;
   }
-  
+
   .nav.scrolled .nav-logo {
-    height: 30px;
+    height: 45px;
   }
 
   .hero {
